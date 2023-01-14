@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>954838423420-q5n15ip2676nl68i1e28i790rfkn7p76.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.954838423420-q5n15ip2676nl68i1e28i790rfkn7p76</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCe9lb01cO_twOTuYboEMQcvN865vS-3-g</string>
+	<key>GCM_SENDER_ID</key>
+	<string>954838423420</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.pixgraphy</string>
+	<key>PROJECT_ID</key>
+	<string>pixgraphy-b052b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pixgraphy-b052b.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:954838423420:ios:a445dd3cf51f00d7c1b6f9</string>
+</dict>
+</plist>

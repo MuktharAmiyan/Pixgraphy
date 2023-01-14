@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "954838423420",
+    "project_id": "pixgraphy-b052b",
+    "storage_bucket": "pixgraphy-b052b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954838423420:android:80032f00f55dabdac1b6f9",
+        "android_client_info": {
+          "package_name": "com.example.pixgraphy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954838423420-01oi2huhd2ik90h3olsrt6jj8c81kgi0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmIGWHMT_wl5LlvacB3hz1BTGJMrmanHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954838423420-01oi2huhd2ik90h3olsrt6jj8c81kgi0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
