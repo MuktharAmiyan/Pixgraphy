@@ -10,7 +10,7 @@ extension GetThumbnailOrNull on File {
     }
     final thumbanil = copyResize(
       fileAsImage,
-      width: 480,
+      width: 360,
     );
     final thumbnailData = encodeJpg(thumbanil);
     return Uint8List.fromList(thumbnailData);

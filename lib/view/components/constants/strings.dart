@@ -119,4 +119,5 @@ class Strings {
   static const areYouSureYouWantToSignOut =
       "Are you  sure you want to sign out ?";
   static const postDeleted = "Post deleted";
+  static const save = "Save";
 }

@@ -10,6 +10,7 @@ class FirebaseCollectionName {
   static const follow = 'Follow';
   static const image = 'Image';
   static const thumbnail = 'Thumbnail';
+  static const profilePic = 'Profile_pic';
 }
 
 @immutable

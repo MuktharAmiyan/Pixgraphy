@@ -94,7 +94,6 @@ class ProfileDrawer extends ConsumerWidget {
               child: OutlinedButton(
                 onPressed: () {
                   const SignOutDialog().show(context).then((res) {
-                    log(res.toString());
                     if (res == true) {
                       ref.read(authStateProvider.notifier).signOut();
                     }
