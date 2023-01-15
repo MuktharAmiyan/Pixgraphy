@@ -120,4 +120,13 @@ class Strings {
       "Are you  sure you want to sign out ?";
   static const postDeleted = "Post deleted";
   static const save = "Save";
+
+  static const reportList = [
+    'Violent or repulsive content',
+    'Hateful or abusive content',
+    'Harmful or dangerous acts',
+    'sexual content',
+    'spam or misleading',
+    'child abuse'
+  ];
 }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pixgraphy/route/route_const.dart';
+import 'package:pixgraphy/state/constant/firebase_const.dart';
 import 'package:pixgraphy/state/post/model/post.dart';
+import 'package:pixgraphy/state/report/model/report_type.dart';
 import 'package:pixgraphy/view/components/dialogs/alert_dialog.dart';
 
 import '../../../state/auth/provider/user_id_provider.dart';
@@ -32,7 +35,9 @@ class PostMenuList extends ConsumerWidget {
             ),
           ),
           onTap: () {
-            //TODO ADD A REPORT FEATURE
+            context.pushNamed(RouteName.report,
+                extra: ReportType.post,
+                params: {FirebaseFieldName.id: post.postId});
           },
         ),
         if (userId != null && userId == post.uid)

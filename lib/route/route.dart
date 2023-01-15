@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pixgraphy/route/route_const.dart';
 import 'package:pixgraphy/state/post/model/post.dart';
+import 'package:pixgraphy/state/report/model/report_type.dart';
 import 'package:pixgraphy/state/user_info/model/user_info_model.dart';
 import 'package:pixgraphy/view/add_post/add_post_view.dart';
 import 'package:pixgraphy/view/auth/landing_view.dart';
@@ -12,6 +13,7 @@ import 'package:pixgraphy/view/components/post/post_detail_view.dart';
 import 'package:pixgraphy/view/main/main_view.dart';
 import 'package:pixgraphy/view/profile/edit_profile_view.dart';
 import 'package:pixgraphy/view/profile/profile_view.dart';
+import 'package:pixgraphy/view/report/report_view.dart';
 import 'package:pixgraphy/view/search/search_view.dart';
 import 'package:pixgraphy/view/settings/settings_theme_view.dart';
 import 'package:pixgraphy/view/settings/settings_view.dart';
@@ -126,6 +128,14 @@ class RouterNotifier extends ChangeNotifier {
           path: RoutePath.postDetail,
           builder: (context, state) => PostDetailView(
             post: state.extra! as Post,
+          ),
+        ),
+        GoRoute(
+          name: RouteName.report,
+          path: RoutePath.report,
+          builder: (context, state) => ReportView(
+            reportType: state.extra as ReportType,
+            id: state.params[FirebaseFieldName.id]!,
           ),
         )
       ];

@@ -7,6 +7,7 @@ import 'package:pixgraphy/state/auth/provider/user_id_provider.dart';
 import 'package:pixgraphy/state/comment/model/comment.dart';
 import 'package:pixgraphy/state/constant/firebase_const.dart';
 import 'package:pixgraphy/state/date/extension/date_format.dart';
+import 'package:pixgraphy/state/report/model/report_type.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
 import 'package:pixgraphy/view/components/dialogs/alert_dialog.dart';
 import 'package:pixgraphy/view/components/dialogs/delete_dialog.dart';
@@ -68,7 +69,9 @@ class CommentTile extends ConsumerWidget {
                         ),
                       ),
                       onTap: () {
-                        //TODO ADD A REPORT FEATURE
+                        context.pushNamed(RouteName.report,
+                            extra: ReportType.comment,
+                            params: {FirebaseFieldName.id: comment.id});
                       },
                     ),
                     if (currentUid != null && currentUid == uid)
