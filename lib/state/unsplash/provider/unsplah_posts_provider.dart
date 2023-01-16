@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pixgraphy/api_key.dart';
+import 'package:pixgraphy/api_keys.dart';
 import 'package:pixgraphy/state/unsplash/model/unsplash_post.dart';
 import 'package:http/http.dart' as http;
 

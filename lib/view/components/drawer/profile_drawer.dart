@@ -4,7 +4,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pixgraphy/api_key.dart';
+import 'package:pixgraphy/api_keys.dart';
 import 'package:pixgraphy/route/route_const.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
 import 'package:pixgraphy/view/components/dialogs/alert_dialog.dart';

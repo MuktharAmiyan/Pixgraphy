@@ -45,4 +45,4 @@ app.*.map.json
 
 
 # Hide key from version control
-api_key.dart
+api_keys.dart
