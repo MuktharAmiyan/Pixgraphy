@@ -107,10 +107,16 @@ class PostDetailView extends ConsumerWidget {
                         clipBehavior: Clip.antiAlias,
                         child: Hero(
                           tag: post.postId,
-                          child: AspectRatio(
-                            aspectRatio: post.aspectRatio,
-                            child: NetworkImageView(
-                              post.thumbnailUrl,
+                          child: GestureDetector(
+                            onTap: () => context.pushNamed(
+                              RouteName.postFull,
+                              extra: post.url,
+                            ),
+                            child: AspectRatio(
+                              aspectRatio: post.aspectRatio,
+                              child: NetworkImageView(
+                                post.thumbnailUrl,
+                              ),
                             ),
                           ),
                         ),

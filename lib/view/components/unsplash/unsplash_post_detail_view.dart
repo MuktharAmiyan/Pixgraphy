@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:pixgraphy/state/date/extension/date_format.dart';
 import 'package:pixgraphy/state/unsplash/model/unsplash_post.dart';
@@ -8,6 +9,8 @@ import 'package:pixgraphy/view/components/post/network_image_view.dart';
 
 import 'package:pixgraphy/view/components/text/subtitle.dart';
 import 'package:pixgraphy/view/components/text/title.dart';
+
+import '../../../route/route_const.dart';
 
 class UnsplashPostDetailView extends ConsumerWidget {
   final UnPost post;
@@ -77,10 +80,16 @@ class UnsplashPostDetailView extends ConsumerWidget {
                         clipBehavior: Clip.antiAlias,
                         child: Hero(
                           tag: post.id ?? '',
-                          child: AspectRatio(
-                            aspectRatio: aspectRatio,
-                            child: NetworkImageView(
-                              post.urls?.small ?? '',
+                          child: GestureDetector(
+                            onTap: () => context.pushNamed(
+                              RouteName.postFull,
+                              extra: post.urls?.raw ?? '',
+                            ),
+                            child: AspectRatio(
+                              aspectRatio: aspectRatio,
+                              child: NetworkImageView(
+                                post.urls?.small ?? '',
+                              ),
                             ),
                           ),
                         ),

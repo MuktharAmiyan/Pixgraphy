@@ -15,6 +15,7 @@ class RouteName {
   static const editProfile = 'edit-profile';
   static const report = 'report';
   static const unPostDetail = 'explore-post-detail';
+  static const postFull = 'post-full-view';
 }
 
 @immutable
@@ -35,4 +36,5 @@ class RoutePath {
   static const unPostDetail = '/explore-post-detail';
   static const editProfile = 'edit-profile';
   static const report = '/report/:id';
+  static const postFull = '/post-full-view';
 }

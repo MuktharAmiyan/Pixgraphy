@@ -11,6 +11,7 @@ import 'package:pixgraphy/view/auth/landing_view.dart';
 import 'package:pixgraphy/view/auth/sign_in_view.dart';
 import 'package:pixgraphy/view/auth/sign_up_view.dart';
 import 'package:pixgraphy/view/components/post/post_detail_view.dart';
+import 'package:pixgraphy/view/components/post/post_full_view.dart';
 import 'package:pixgraphy/view/components/unsplash/unsplash_post_detail_view.dart';
 import 'package:pixgraphy/view/main/main_view.dart';
 import 'package:pixgraphy/view/profile/edit_profile_view.dart';
@@ -145,6 +146,13 @@ class RouterNotifier extends ChangeNotifier {
           builder: (context, state) => ReportView(
             reportType: state.extra as ReportType,
             id: state.params[FirebaseFieldName.id]!,
+          ),
+        ),
+        GoRoute(
+          name: RouteName.postFull,
+          path: RoutePath.postFull,
+          builder: (context, state) => PostFullView(
+            url: state.extra as String,
           ),
         )
       ];
