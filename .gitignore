@@ -44,4 +44,4 @@ app.*.map.json
 /android/app/release
 
 # Hide key from version control
-api_key.dart
+api_key
