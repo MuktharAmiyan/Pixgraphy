@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class SearchButton extends StatelessWidget {
   final String hintText;
   final VoidCallback onTap;
-  const SearchButton({required this.hintText, required this.onTap, super.key});
+  final double? width;
+  const SearchButton(
+      {required this.hintText, required this.onTap, super.key, this.width});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class SearchButton extends StatelessWidget {
         ),
         elevation: 0.5,
         child: Container(
-          constraints: const BoxConstraints(minWidth: 360, maxWidth: 760),
+          constraints: BoxConstraints(minWidth: width ?? 300, maxWidth: 760),
           height: 56,
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(

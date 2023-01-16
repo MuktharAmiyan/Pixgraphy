@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pixgraphy/state/unsplash/provider/unsplah_posts_provider.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
+import 'package:pixgraphy/view/components/delegate/unsplash_search_deligate.dart';
 import 'package:pixgraphy/view/components/search/search_button.dart';
 import 'package:pixgraphy/view/components/unsplash/unsplash_grid_view.dart';
 
@@ -18,9 +19,20 @@ class UnsplashExploreView extends ConsumerWidget {
           onRefresh: () async => ref.refresh(unsplashPostsProvider),
           child: Column(
             children: [
-              SearchButton(
-                hintText: Strings.search,
-                onTap: () {},
+              Row(
+                children: [
+                  const BackButton(),
+                  Expanded(
+                    child: SearchButton(
+                      hintText: Strings.search,
+                      onTap: () {
+                        showSearch(
+                            context: context,
+                            delegate: UnsplashSearchDelegate(ref: ref));
+                      },
+                    ),
+                  ),
+                ],
               ),
               Expanded(
                 child: ref.watch(unsplashPostsProvider).when(

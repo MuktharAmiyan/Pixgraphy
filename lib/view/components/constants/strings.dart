@@ -98,6 +98,7 @@ class Strings {
   static const somethingwentwrong = "Something went wrong.Please try again.";
 
   static const searchUser = "Search user";
+  static const searchUnPosts = "Search unsplash posts";
   static const noUserFound = "No user found";
   static const followuserstoseetheirposts = "Follow users to see their posts.";
   static const likes = "Likes";
