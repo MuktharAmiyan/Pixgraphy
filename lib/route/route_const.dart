@@ -14,6 +14,7 @@ class RouteName {
   static const postDetail = 'post-detail';
   static const editProfile = 'edit-profile';
   static const report = 'report';
+  static const unPostDetail = 'explore-post-detail';
 }
 
 @immutable
@@ -31,6 +32,7 @@ class RoutePath {
   static const addPost = '/addPost';
   static const unsplashSearch = '/unsplash-search';
   static const postDetail = '/post-detail';
+  static const unPostDetail = '/explore-post-detail';
   static const editProfile = 'edit-profile';
   static const report = '/report/:id';
 }

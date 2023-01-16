@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pixgraphy/route/route_const.dart';
-import 'package:pixgraphy/state/post/model/post.dart';
+import 'package:pixgraphy/state/unsplash/model/unsplash_post.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
 
-import 'network_image_view.dart';
+import '../post/network_image_view.dart';
 
-class MasonaryPostGridView extends StatelessWidget {
-  final Iterable<Post> posts;
-  const MasonaryPostGridView({
+class UnsplashPostGridView extends StatelessWidget {
+  final Iterable<UnPost> posts;
+  const UnsplashPostGridView({
     super.key,
     required this.posts,
   });
@@ -19,7 +19,7 @@ class MasonaryPostGridView extends StatelessWidget {
     if (posts.isEmpty) {
       return Center(
         child: Text(
-          Strings.followuserstoseetheirposts,
+          Strings.somethingwentwrong,
           style: Theme.of(context).textTheme.titleMedium!.copyWith(
                 color: Theme.of(context).colorScheme.onBackground,
               ),
@@ -32,19 +32,23 @@ class MasonaryPostGridView extends StatelessWidget {
       itemCount: posts.length,
       itemBuilder: (context, index) {
         final post = posts.elementAt(index);
+        final id = post.id ?? '';
+        final width = post.width ?? 1;
+        final height = post.height ?? 1;
+        final aspectRatio = width / height;
+        final url = post.urls!.small ?? post.urls!.regular!;
         return Hero(
-          tag: post.postId,
+          tag: id,
           child: GestureDetector(
-            onTap: () => context.pushNamed(
-              RouteName.postDetail,
-              extra: post,
-            ),
+            onTap: () {
+              context.pushNamed(RouteName.unPostDetail, extra: post);
+            },
             child: Card(
               clipBehavior: Clip.antiAlias,
               child: AspectRatio(
-                aspectRatio: post.aspectRatio,
+                aspectRatio: aspectRatio,
                 child: NetworkImageView(
-                  post.thumbnailUrl,
+                  url,
                 ),
               ),
             ),
