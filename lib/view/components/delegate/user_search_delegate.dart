@@ -12,8 +12,8 @@ import '../../../state/constant/firebase_const.dart';
 import '../../../state/theme/theme_provider.dart';
 
 class UserSearchDelegate extends SearchDelegate<Strings> {
-  final WidgetRef ref;
-  UserSearchDelegate({required this.ref})
+  final WidgetRef wRef;
+  UserSearchDelegate(this.wRef)
       : super(
           searchFieldLabel: Strings.searchUser,
         );
@@ -42,52 +42,53 @@ class UserSearchDelegate extends SearchDelegate<Strings> {
     if (query.isEmpty) {
       return const SizedBox();
     }
-    return ref
-        .watch(
-          searchUserProvider(
-            query.toLowerCase(),
-          ),
-        )
-        .when(
-          data: (users) {
-            if (users.isEmpty) {
-              return Center(
-                child: Text(
-                  Strings.noUserFound,
-                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        color: Theme.of(context).colorScheme.onBackground,
-                      ),
-                ),
-              );
-            }
-            return ListView.builder(
-              itemCount: users.length,
-              itemBuilder: (_, index) {
-                final user = users.elementAt(index);
-                return UserListTile(
-                  uid: user.uid,
-                  onTap: () {
-                    context.pushNamed(
-                      RouteName.profile,
-                      params: {
-                        FirebaseFieldName.uid: user.uid,
+    return Consumer(
+        builder: (context, ref, child) => ref
+            .watch(
+              searchUserProvider(
+                query.toLowerCase(),
+              ),
+            )
+            .when(
+              data: (users) {
+                if (users.isEmpty) {
+                  return Center(
+                    child: Text(
+                      Strings.noUserFound,
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                            color: Theme.of(context).colorScheme.onBackground,
+                          ),
+                    ),
+                  );
+                }
+                return ListView.builder(
+                  itemCount: users.length,
+                  itemBuilder: (_, index) {
+                    final user = users.elementAt(index);
+                    return UserListTile(
+                      uid: user.uid,
+                      onTap: () {
+                        context.pushNamed(
+                          RouteName.profile,
+                          params: {
+                            FirebaseFieldName.uid: user.uid,
+                          },
+                        );
                       },
+                      followButton: false,
                     );
                   },
-                  followButton: false,
                 );
               },
-            );
-          },
-          error: (_, __) => const Center(
-            child: Text(
-              Strings.somethingwentwrong,
-            ),
-          ),
-          loading: () => const Center(
-            child: CircularProgressIndicator(),
-          ),
-        );
+              error: (_, __) => const Center(
+                child: Text(
+                  Strings.somethingwentwrong,
+                ),
+              ),
+              loading: () => const Center(
+                child: CircularProgressIndicator(),
+              ),
+            ));
   }
 
   @override
@@ -95,57 +96,58 @@ class UserSearchDelegate extends SearchDelegate<Strings> {
     if (query.isEmpty) {
       return const SizedBox();
     }
-    return ref
-        .watch(
-          searchUserProvider(
-            query.toLowerCase(),
-          ),
-        )
-        .when(
-          data: (users) {
-            if (users.isEmpty) {
-              return Center(
-                child: Text(
-                  Strings.noUserFound,
-                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        color: Theme.of(context).colorScheme.onBackground,
-                      ),
-                ),
-              );
-            }
-            return ListView.builder(
-              itemCount: users.length,
-              itemBuilder: (_, index) {
-                final user = users.elementAt(index);
-                return UserListTile(
-                  uid: user.uid,
-                  onTap: () {
-                    context.pushNamed(
-                      RouteName.profile,
-                      params: {
-                        FirebaseFieldName.uid: user.uid,
+    return Consumer(
+        builder: (context, ref, child) => ref
+            .watch(
+              searchUserProvider(
+                query.toLowerCase(),
+              ),
+            )
+            .when(
+              data: (users) {
+                if (users.isEmpty) {
+                  return Center(
+                    child: Text(
+                      Strings.noUserFound,
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                            color: Theme.of(context).colorScheme.onBackground,
+                          ),
+                    ),
+                  );
+                }
+                return ListView.builder(
+                  itemCount: users.length,
+                  itemBuilder: (_, index) {
+                    final user = users.elementAt(index);
+                    return UserListTile(
+                      uid: user.uid,
+                      onTap: () {
+                        context.pushNamed(
+                          RouteName.profile,
+                          params: {
+                            FirebaseFieldName.uid: user.uid,
+                          },
+                        );
                       },
+                      followButton: false,
                     );
                   },
-                  followButton: false,
                 );
               },
-            );
-          },
-          error: (_, __) => const Center(
-            child: Text(
-              Strings.somethingwentwrong,
-            ),
-          ),
-          loading: () => const Center(
-            child: CircularProgressIndicator(),
-          ),
-        );
+              error: (_, __) => const Center(
+                child: Text(
+                  Strings.somethingwentwrong,
+                ),
+              ),
+              loading: () => const Center(
+                child: CircularProgressIndicator(),
+              ),
+            ));
   }
 
   @override
   ThemeData appBarTheme(BuildContext context) {
-    final themeState = ref.watch(themeProvider);
+    final themeState = wRef.watch(themeProvider);
     return ThemeData(
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(

@@ -18,8 +18,11 @@ class SearchButton extends StatelessWidget {
         ),
         elevation: 0.5,
         child: Container(
-          constraints: BoxConstraints(minWidth: width ?? 300, maxWidth: 760),
-          height: 56,
+          constraints: BoxConstraints(
+            minWidth: width ?? 300,
+            maxWidth: 760,
+            minHeight: 51,
+          ),
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,

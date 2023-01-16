@@ -20,7 +20,7 @@ class SearchView extends ConsumerWidget {
               onTap: () {
                 showSearch(
                   context: context,
-                  delegate: UserSearchDelegate(ref: ref),
+                  delegate: UserSearchDelegate(ref),
                   useRootNavigator: true,
                   query: '',
                 );

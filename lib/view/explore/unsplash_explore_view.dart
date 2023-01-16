@@ -11,43 +11,35 @@ class UnsplashExploreView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return SafeArea(
-      child: Scaffold(
-          body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: RefreshIndicator(
-          onRefresh: () async => ref.refresh(unsplashPostsProvider),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  const BackButton(),
-                  Expanded(
-                    child: SearchButton(
-                      hintText: Strings.search,
-                      onTap: () {
-                        showSearch(
-                            context: context,
-                            delegate: UnsplashSearchDelegate(ref: ref));
-                      },
-                    ),
-                  ),
-                ],
-              ),
-              Expanded(
-                child: ref.watch(unsplashPostsProvider).when(
-                    data: (unPosts) => UnsplashPostGridView(posts: unPosts),
-                    error: (_, __) => const Center(
-                          child: Text(Strings.somethingwentwrong),
-                        ),
-                    loading: () => const Center(
-                          child: CircularProgressIndicator(),
-                        )),
-              )
-            ],
+    return Scaffold(
+        appBar: AppBar(
+          title: SearchButton(
+            hintText: Strings.search,
+            onTap: () {
+              showSearch(
+                  context: context, delegate: UnsplashSearchDelegate(ref));
+            },
           ),
         ),
-      )),
-    );
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: RefreshIndicator(
+            onRefresh: () async => ref.refresh(unsplashPostsProvider),
+            child: Column(
+              children: [
+                Expanded(
+                  child: ref.watch(unsplashPostsProvider).when(
+                      data: (unPosts) => UnsplashPostGridView(posts: unPosts),
+                      error: (_, __) => const Center(
+                            child: Text(Strings.somethingwentwrong),
+                          ),
+                      loading: () => const Center(
+                            child: CircularProgressIndicator(),
+                          )),
+                )
+              ],
+            ),
+          ),
+        ));
   }
 }

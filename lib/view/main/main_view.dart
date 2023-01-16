@@ -36,7 +36,7 @@ class MainView extends ConsumerWidget {
             onPressed: () async {
               await showSearch(
                 context: context,
-                delegate: UserSearchDelegate(ref: ref),
+                delegate: UserSearchDelegate(ref),
               );
             },
             icon: const Icon(Icons.search_outlined),

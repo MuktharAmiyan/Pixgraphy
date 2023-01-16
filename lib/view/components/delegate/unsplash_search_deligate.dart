@@ -8,8 +8,8 @@ import 'package:pixgraphy/view/components/unsplash/unsplash_grid_view.dart';
 import '../../../state/theme/theme_provider.dart';
 
 class UnsplashSearchDelegate extends SearchDelegate<Strings> {
-  final WidgetRef ref;
-  UnsplashSearchDelegate({required this.ref})
+  final WidgetRef wRef;
+  UnsplashSearchDelegate(this.wRef)
       : super(
           searchFieldLabel: Strings.searchUnPosts,
         );
@@ -38,23 +38,25 @@ class UnsplashSearchDelegate extends SearchDelegate<Strings> {
     if (query.isEmpty) {
       return const SizedBox();
     }
-    return ref
-        .watch(
-          unsplashSearchPostsProvider(
-            query.toLowerCase(),
-          ),
-        )
-        .when(
-          data: (unPosts) => UnsplashPostGridView(posts: unPosts),
-          error: (_, __) => const Center(
-            child: Text(
-              Strings.somethingwentwrong,
+    return Consumer(
+      builder: (context, ref, child) => ref
+          .watch(
+            unsplashSearchPostsProvider(
+              query.toLowerCase(),
+            ),
+          )
+          .when(
+            data: (unPosts) => UnsplashPostGridView(posts: unPosts),
+            error: (_, __) => const Center(
+              child: Text(
+                Strings.somethingwentwrong,
+              ),
+            ),
+            loading: () => const Center(
+              child: CircularProgressIndicator(),
             ),
           ),
-          loading: () => const Center(
-            child: CircularProgressIndicator(),
-          ),
-        );
+    );
   }
 
   @override
@@ -62,28 +64,30 @@ class UnsplashSearchDelegate extends SearchDelegate<Strings> {
     if (query.isEmpty) {
       return const SizedBox();
     }
-    return ref
-        .watch(
-          unsplashSearchPostsProvider(
-            query.toLowerCase(),
-          ),
-        )
-        .when(
-          data: (unPosts) => UnsplashPostGridView(posts: unPosts),
-          error: (_, __) => const Center(
-            child: Text(
-              Strings.somethingwentwrong,
+    return Consumer(
+      builder: (context, ref, child) => ref
+          .watch(
+            unsplashSearchPostsProvider(
+              query.toLowerCase(),
+            ),
+          )
+          .when(
+            data: (unPosts) => UnsplashPostGridView(posts: unPosts),
+            error: (_, __) => const Center(
+              child: Text(
+                Strings.somethingwentwrong,
+              ),
+            ),
+            loading: () => const Center(
+              child: CircularProgressIndicator(),
             ),
           ),
-          loading: () => const Center(
-            child: CircularProgressIndicator(),
-          ),
-        );
+    );
   }
 
   @override
   ThemeData appBarTheme(BuildContext context) {
-    final themeState = ref.watch(themeProvider);
+    final themeState = wRef.watch(themeProvider);
     return ThemeData(
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(
