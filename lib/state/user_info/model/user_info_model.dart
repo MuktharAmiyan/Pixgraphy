@@ -20,14 +20,20 @@ class UserInfoModel {
     name: FirebaseFieldName.fcmToken,
     defaultValue: [],
   )
-  final List<String?> fcmToken;
+  final List<String?>? fcmToken;
+  @JsonKey(
+    name: FirebaseFieldName.isDisabled,
+    defaultValue: false,
+  )
+  final bool? isDisabled;
   UserInfoModel({
     required this.uid,
     required this.username,
     required this.name,
     required this.email,
     this.photoUrl,
-    this.fcmToken = const [],
+    this.fcmToken,
+    this.isDisabled,
   });
   factory UserInfoModel.fromMap(Map<String, dynamic> json) =>
       _$UserInfoModelFromJson(json);

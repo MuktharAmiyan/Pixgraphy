@@ -4,7 +4,7 @@ import 'package:pixgraphy/state/constant/firebase_const.dart';
 import '../../../core/firebase/firebase_firestore.dart';
 import '../model/user_info_model.dart';
 
-final userInfoProvider = StreamProvider.family
+final userInfoStreamProvider = StreamProvider.family
     .autoDispose<UserInfoModel, String?>((ref, String? uid) {
   final firebaseFirestore = ref.read(firebaseFirestoreProvider);
   if (uid == null) {

@@ -12,7 +12,7 @@ class UserName extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Text(
-      ref.watch(userInfoProvider(uid)).when(
+      ref.watch(userInfoStreamProvider(uid)).when(
           data: (user) => user.username,
           error: (_, __) => '',
           loading: () => ''),

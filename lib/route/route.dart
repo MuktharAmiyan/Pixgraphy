@@ -55,7 +55,7 @@ class RouterNotifier extends ChangeNotifier {
       loading: (_) => null,
       signIn: (_) => areWeSignIn ? null : RoutePath.signIn,
       signUp: (_) => areWeSignUp ? null : RoutePath.signUp,
-      error: (_) => null,
+      error: (_) => areWeLanding ? null : RoutePath.landing,
       orElse: () {
         if (state.location == RoutePath.landing ||
             state.location == RoutePath.signIn ||

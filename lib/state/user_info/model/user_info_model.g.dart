@@ -17,6 +17,7 @@ UserInfoModel _$UserInfoModelFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String?)
               .toList() ??
           [],
+      isDisabled: json['is_disabled'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$UserInfoModelToJson(UserInfoModel instance) =>
@@ -27,4 +28,5 @@ Map<String, dynamic> _$UserInfoModelToJson(UserInfoModel instance) =>
       'email': instance.email,
       'photo_url': instance.photoUrl,
       'fcm_tokens': instance.fcmToken,
+      'is_disabled': instance.isDisabled,
     };

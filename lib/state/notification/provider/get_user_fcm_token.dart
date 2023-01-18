@@ -24,7 +24,10 @@ class GetUsersFcmTokens {
           return [];
         }
         final user = UserInfoModel.fromMap(doc.data()!);
-        return user.fcmToken;
+        if (user.fcmToken == null) {
+          return [];
+        }
+        return user.fcmToken!;
       },
     );
   }

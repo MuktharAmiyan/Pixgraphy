@@ -17,8 +17,7 @@ extension Show on AppSnackbar {
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> get show =>
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+          content: Wrap(
             children: [
               if (prefixIcon != null) ...[prefixIcon!],
               const SizedBox(

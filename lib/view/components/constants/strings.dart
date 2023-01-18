@@ -18,6 +18,8 @@ class Strings {
   static const join = "Join";
   static const signIn = "Sign In";
   static const signOut = "Sign Out";
+  static const accountDisabled =
+      "your account has been suspended. please contact customer support";
 
   //SIGNUP SCREEN
   static const username = "Username";

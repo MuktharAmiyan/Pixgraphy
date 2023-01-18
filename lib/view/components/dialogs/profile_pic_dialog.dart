@@ -12,7 +12,7 @@ Future<void> showProfile(
       context: context,
       builder: (_) => Consumer(
         builder: (___, ref, _) => Dialog(
-          child: ref.read(userInfoProvider(uid)).when(
+          child: ref.read(userInfoStreamProvider(uid)).when(
                 data: (user) {
                   if (user.photoUrl == null) {
                     return Image.asset(

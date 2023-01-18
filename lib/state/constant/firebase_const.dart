@@ -34,7 +34,7 @@ class FirebaseFieldName {
   static const commentId = 'comment_id';
   static const comment = 'comment';
   static const reportId = 'report_id';
-
+  static const isDisabled = 'is_disabled';
   static const id = 'id';
   static const reportReason = 'reason';
   static const reportType = 'report_type';

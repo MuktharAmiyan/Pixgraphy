@@ -21,7 +21,7 @@ class ProfileCircleAvatar extends ConsumerWidget {
       child: CircleAvatar(
         radius: radius,
         backgroundColor: Theme.of(context).canvasColor,
-        backgroundImage: ref.watch(userInfoProvider(uid)).when(
+        backgroundImage: ref.watch(userInfoStreamProvider(uid)).when(
               data: (user) {
                 if (user.photoUrl == null) {
                   return const AssetImage(AssetPath.defaultProPic);

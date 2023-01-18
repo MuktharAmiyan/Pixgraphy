@@ -12,7 +12,7 @@ class UserEmail extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Text(
-      ref.watch(userInfoProvider(uid)).when(
+      ref.watch(userInfoStreamProvider(uid)).when(
           data: (user) => user.email, error: (_, __) => '', loading: () => ''),
       style: Theme.of(context)
           .textTheme

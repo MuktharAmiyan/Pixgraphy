@@ -16,7 +16,7 @@ class CommentUsernameAndComment extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return RichtwoText(
-      text1: ref.watch(userInfoProvider(uid)).when(
+      text1: ref.watch(userInfoStreamProvider(uid)).when(
           data: (user) => user.username,
           error: (_, __) => '',
           loading: () => ''),

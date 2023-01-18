@@ -18,7 +18,7 @@ class ProfileName extends ConsumerWidget {
     return GestureDetector(
       onTap: onTap,
       child: Text(
-        ref.watch(userInfoProvider(uid)).when(
+        ref.watch(userInfoStreamProvider(uid)).when(
             data: (user) => user.name, error: (_, __) => '', loading: () => ''),
         style: style ??
             Theme.of(context).textTheme.titleMedium!.copyWith(
