@@ -1,10 +1,6 @@
-import 'dart:convert';
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pixgraphy/api_keys.dart';
 import 'package:pixgraphy/route/route_const.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
 import 'package:pixgraphy/view/components/dialogs/alert_dialog.dart';
@@ -14,7 +10,6 @@ import '../../../state/constant/firebase_const.dart';
 import '../profile/profile_circle_avathar.dart';
 import '../profile/user_email.dart';
 import '../profile/profile_name.dart';
-import 'package:http/http.dart' as http;
 
 class ProfileDrawer extends ConsumerWidget {
   final String? uid;
@@ -51,22 +46,6 @@ class ProfileDrawer extends ConsumerWidget {
             leading: const Icon(Icons.person_outline),
             title: Text(
               Strings.profile,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-          ),
-          ListTile(
-            onTap: () => context.pushNamed(RouteName.addPost),
-            leading: const Icon(Icons.image_outlined),
-            title: Text(
-              Strings.addPost,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-          ),
-          ListTile(
-            onTap: () => context.pushNamed(RouteName.unsplashSearch),
-            leading: const Icon(Icons.travel_explore_outlined),
-            title: Text(
-              Strings.unsplashExplore,
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ),

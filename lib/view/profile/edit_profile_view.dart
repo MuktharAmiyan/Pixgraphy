@@ -75,10 +75,7 @@ class _EditProfileviewState extends ConsumerState<EditProfileview> {
   Widget build(BuildContext context) {
     ref.listen(userInfoProvider, (_, state) {
       state.maybeWhen(
-        success: () {
-          ref.refresh(imagePickerProvider);
-          context.pop();
-        },
+        success: () => {ref.refresh(imagePickerProvider), context.pop()},
         faliure: () {
           ErrorSnackbar(errorText: Strings.somethingwentwrong, context: context)
               .show;

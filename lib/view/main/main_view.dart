@@ -1,25 +1,53 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:pixgraphy/state/auth/notifier/auth_state_notifier.dart';
 import 'package:pixgraphy/state/post/provider/feed_provider.dart';
-import 'package:pixgraphy/state/user_info/notifier/user_info_notifier.dart';
 import 'package:pixgraphy/state/user_info/provider/user_info_provider.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
 import 'package:pixgraphy/view/components/delegate/user_search_delegate.dart';
 import 'package:pixgraphy/view/components/post/masonary_post_grid_view.dart';
 import 'package:pixgraphy/view/components/snakbar/error_snakbar.dart';
 import 'package:pixgraphy/view/components/snakbar/snakbar_model.dart';
-
+import '../../route/route_const.dart';
 import '../../state/auth/provider/user_id_provider.dart';
 import '../components/app_logo/app_logo.dart';
 import '../components/drawer/profile_drawer.dart';
 import '../components/profile/profile_circle_avathar.dart';
 
-class MainView extends ConsumerWidget {
+class MainView extends ConsumerStatefulWidget {
   const MainView({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ConsumerStatefulWidget> createState() => _MainViewState();
+}
+
+class _MainViewState extends ConsumerState<MainView> {
+  final _scrollController = ScrollController();
+  bool _showBottom = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(() {
+      if (_scrollController.position.userScrollDirection ==
+          ScrollDirection.reverse) {
+        _showBottom = false;
+        setState(() {});
+      }
+      if (_scrollController.position.userScrollDirection ==
+          ScrollDirection.forward) {
+        _showBottom = true;
+        setState(() {});
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final uid = ref.watch(userIdProvider);
     ref.listen(userInfoStreamProvider(uid), (_, next) {
       next.maybeWhen(
@@ -68,6 +96,7 @@ class MainView extends ConsumerWidget {
       ),
       body: ref.watch(feedProvider).when(
             data: (posts) => MasonaryPostGridView(
+              scrollController: _scrollController,
               posts: posts,
             ),
             error: (_, __) => const Center(
@@ -77,6 +106,33 @@ class MainView extends ConsumerWidget {
               child: CircularProgressIndicator(),
             ),
           ),
+      bottomNavigationBar: AnimatedContainer(
+        duration: const Duration(milliseconds: 800),
+        height: _showBottom ? 80 : 0,
+        child: BottomAppBar(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              IconButton(
+                onPressed: () => context.pushNamed(RouteName.unsplashSearch),
+                icon: const Icon(Icons.travel_explore),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.notifications_outlined),
+              )
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton: _showBottom
+          ? FloatingActionButton(
+              tooltip: Strings.addPost,
+              onPressed: () => context.pushNamed(RouteName.addPost),
+              child: const Icon(Icons.add),
+            )
+          : null,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endContained,
     );
   }
 }

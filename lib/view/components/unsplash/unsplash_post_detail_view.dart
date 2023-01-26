@@ -83,7 +83,7 @@ class UnsplashPostDetailView extends ConsumerWidget {
                           child: GestureDetector(
                             onTap: () => context.pushNamed(
                               RouteName.postFull,
-                              extra: post.urls?.raw ?? '',
+                              extra: post.urls?.regular ?? '',
                             ),
                             child: AspectRatio(
                               aspectRatio: aspectRatio,

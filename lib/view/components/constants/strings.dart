@@ -12,9 +12,9 @@ class Strings {
   static const welcomeToText = 'Welcome To';
   static const appName = "Pixgraphy";
   static const appnameSplit = "PIX\nGRAPHY";
-  static const smallLandingDes = "The platform for creatives.";
+  static const smallLandingDes = "Place where creativity meets inspiration.";
   static const detailLandingDes =
-      'Browse curated inspiration from designers all around the world.';
+      "Welcome to Pixgraphy, a place where creativity meets inspiration. Here, photographers of all levels can come together to share their passion for capturing life's beauty. Whether you're a professional photographer or just starting out, our community is dedicated to helping you grow as an artist and create stunning imagery. Join us in exploring the world through a different lens, and discover the beauty of photography in a new way. From snapshots to masterpieces, we're here to help you bring your vision to life and share it with the world. So come and capture life's beauty and share it with the world in Pixgraphy.";
   static const join = "Join";
   static const signIn = "Sign In";
   static const signOut = "Sign Out";

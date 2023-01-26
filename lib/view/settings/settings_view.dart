@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pixgraphy/route/route_const.dart';
+import 'package:pixgraphy/view/components/app_logo/app_logo.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
 
 class SettingsView extends StatelessWidget {
@@ -16,7 +16,7 @@ class SettingsView extends StatelessWidget {
       body: ListView(
         children: [
           ListTile(
-            leading: const FaIcon(FontAwesomeIcons.lightbulb),
+            leading: const Icon(Icons.lightbulb_outline),
             title: const Text(Strings.appearance),
             onTap: () => context.pushNamed(RouteName.theme),
           ),
@@ -24,6 +24,12 @@ class SettingsView extends StatelessWidget {
             icon: Icon(Icons.question_mark),
             applicationName: Strings.appName,
             applicationVersion: '0.1',
+            applicationIcon: AppLogo(
+              size: 15,
+            ),
+            aboutBoxChildren: [
+              Text(Strings.detailLandingDes),
+            ],
           ),
         ],
       ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pixgraphy/state/theme/extension/to_bool.dart';
 import 'package:pixgraphy/state/theme/extension/to_color.dart';
 import 'package:pixgraphy/state/unsplash/provider/unspash_search_provider.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';

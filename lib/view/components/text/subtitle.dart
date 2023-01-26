@@ -8,7 +8,7 @@ class SubTitleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: Theme.of(context).textTheme.overline!.copyWith(
+      style: Theme.of(context).textTheme.labelSmall!.copyWith(
             color: Theme.of(context).colorScheme.onSurfaceVariant,
           ),
     );

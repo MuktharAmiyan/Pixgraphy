@@ -18,7 +18,7 @@ final unsplashPostsProvider =
     final posts = jsonDecode(response.body) as List;
     posts.addAll(jsonDecode(responsePage2.body) as List);
     final unPosts = posts.map((e) => UnPost.fromJson(e));
-    log(unPosts.length.toString());
+
     completer.complete(unPosts);
   }
 

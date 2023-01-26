@@ -5,7 +5,6 @@ import 'package:pixgraphy/view/components/constants/strings.dart';
 import 'package:pixgraphy/view/components/liner_progress/appbar_bottom_loading.dart';
 import 'package:pixgraphy/view/components/snakbar/error_snakbar.dart';
 import 'package:pixgraphy/view/components/snakbar/snakbar_model.dart';
-
 import '../../state/image_upload/notifier/image_picker_notifier.dart';
 import '../../state/image_upload/notifier/post_upload_notifier.dart';
 
@@ -57,73 +56,79 @@ class _AddPostState extends ConsumerState<AddPost> {
         .watch(postUploadProvider)
         .maybeWhen(loading: () => true, orElse: () => false);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(Strings.addPost),
-        bottom: isLoading ? const AppbarBottomLoading() : null,
-      ),
-      body: ref.watch(imagePickerProvider).when(
-            initial: () => Center(
-              child: TextButton(
-                onPressed: ref.read(imagePickerProvider.notifier).pickImage,
-                child: const Text(Strings.pickImage),
+    return WillPopScope(
+      onWillPop: () async {
+        return isLoading ? false : true;
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(Strings.addPost),
+          bottom: isLoading ? const AppbarBottomLoading() : null,
+        ),
+        body: ref.watch(imagePickerProvider).when(
+              initial: () => Center(
+                child: FloatingActionButton.extended(
+                  onPressed: ref.read(imagePickerProvider.notifier).pickImage,
+                  label: const Text(Strings.pickImage),
+                  icon: const Icon(Icons.add),
+                ),
+              ),
+              loading: () => const Center(child: CircularProgressIndicator()),
+              thumbnailIsNull: () => Center(
+                child: TextButton(
+                  onPressed: ref.read(imagePickerProvider.notifier).pickImage,
+                  child: const Text(Strings.pickImage),
+                ),
+              ),
+              success: (allImages) => SingleChildScrollView(
+                child: Column(
+                  children: [
+                    if (isLoading) const LinearProgressIndicator(),
+                    CreatePostView(
+                      allImages: allImages,
+                      titleController: titleController,
+                      shotOnController: shotOnController,
+                      descriptionController: descriptionController,
+                    ),
+                  ],
+                ),
               ),
             ),
-            loading: () => const Center(child: CircularProgressIndicator()),
-            thumbnailIsNull: () => Center(
-              child: TextButton(
-                onPressed: ref.read(imagePickerProvider.notifier).pickImage,
-                child: const Text(Strings.pickImage),
-              ),
-            ),
-            success: (allImages) => SingleChildScrollView(
-              child: Column(
+        floatingActionButton: ref.watch(imagePickerProvider).maybeWhen(
+              orElse: () => null,
+              success: (allImage) => Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  if (isLoading) const LinearProgressIndicator(),
-                  CreatePostView(
-                    allImages: allImages,
-                    titleController: titleController,
-                    shotOnController: shotOnController,
-                    descriptionController: descriptionController,
+                  FloatingActionButton.extended(
+                    onPressed: () {
+                      if (!isLoading) {
+                        FocusScope.of(context).unfocus();
+                        ref.read(postUploadProvider.notifier).upload(
+                              allImage: allImage,
+                              title: titleController.text.trim(),
+                              shotOn: shotOnController.text.trim(),
+                              description: descriptionController.text.trim(),
+                            );
+                      }
+                    },
+                    label: const Text(Strings.upload),
+                    icon: const Icon(Icons.upload_outlined),
                   ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  FloatingActionButton(
+                    onPressed: () {
+                      if (!isLoading) {
+                        ref.read(imagePickerProvider.notifier).cancel();
+                      }
+                    },
+                    child: const Icon(Icons.cancel),
+                  )
                 ],
               ),
             ),
-          ),
-      floatingActionButton: ref.watch(imagePickerProvider).maybeWhen(
-            orElse: () => null,
-            success: (allImage) => Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                FloatingActionButton.extended(
-                  onPressed: () {
-                    if (!isLoading) {
-                      FocusScope.of(context).unfocus();
-                      ref.read(postUploadProvider.notifier).upload(
-                            allImage: allImage,
-                            title: titleController.text.trim(),
-                            shotOn: shotOnController.text.trim(),
-                            description: descriptionController.text.trim(),
-                          );
-                    }
-                  },
-                  label: const Text(Strings.upload),
-                  icon: const Icon(Icons.upload_outlined),
-                ),
-                const SizedBox(
-                  width: 8,
-                ),
-                FloatingActionButton(
-                  onPressed: () {
-                    if (!isLoading) {
-                      ref.read(imagePickerProvider.notifier).cancel();
-                    }
-                  },
-                  child: const Icon(Icons.cancel),
-                )
-              ],
-            ),
-          ),
+      ),
     );
   }
 }

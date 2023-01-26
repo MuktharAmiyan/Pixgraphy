@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pixgraphy/core/firebase/firebase_firestore.dart';
 import 'package:pixgraphy/state/constant/firebase_const.dart';
 import 'package:pixgraphy/state/report/model/report.dart';
-import 'package:pixgraphy/state/report/model/report_type.dart';
 
 final reportrepositoryProvider = Provider<ReportRepository>((ref) {
   final firebaseFirestore = ref.read(firebaseFirestoreProvider);

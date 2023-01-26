@@ -9,10 +9,9 @@ import 'network_image_view.dart';
 
 class MasonaryPostGridView extends StatelessWidget {
   final Iterable<Post> posts;
-  const MasonaryPostGridView({
-    super.key,
-    required this.posts,
-  });
+  final ScrollController? scrollController;
+  const MasonaryPostGridView(
+      {super.key, required this.posts, this.scrollController});
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +26,7 @@ class MasonaryPostGridView extends StatelessWidget {
       );
     }
     return MasonryGridView.count(
+      controller: scrollController,
       physics: const BouncingScrollPhysics(),
       crossAxisCount: 2,
       itemCount: posts.length,

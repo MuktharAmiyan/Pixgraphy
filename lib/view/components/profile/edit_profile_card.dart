@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pixgraphy/route/route_const.dart';
 import 'package:pixgraphy/state/constant/firebase_const.dart';
-import 'package:pixgraphy/state/user_info/model/user_info_model.dart';
 import 'package:pixgraphy/state/user_info/provider/get_user_info.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
 import 'package:pixgraphy/view/components/profile/column_two_text_card.dart';

@@ -31,12 +31,10 @@ class SettingsThemeView extends ConsumerWidget {
       body: ListView(
         shrinkWrap: true,
         children: [
-          ListTile(
+          SwitchListTile(
             title: const Text(Strings.darkMode),
-            trailing: Switch(
-              value: isDark,
-              onChanged: (value) => toggleDarkMode(value, ref),
-            ),
+            value: isDark,
+            onChanged: (value) => toggleDarkMode(value, ref),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -53,7 +51,9 @@ class SettingsThemeView extends ConsumerWidget {
                     final color = AppSeedColor.values[index];
                     return FilterChip(
                       label: Text(color.toName),
-                      labelStyle: TextStyle(color: color.toColor),
+                      labelStyle: TextStyle(
+                        color: color.toColor,
+                      ),
                       selected: seedColor == color,
                       onSelected: (selectedSeedColor) =>
                           changeSeedColor(color, ref),

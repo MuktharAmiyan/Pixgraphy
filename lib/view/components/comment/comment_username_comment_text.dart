@@ -24,7 +24,7 @@ class CommentUsernameAndComment extends ConsumerWidget {
             color: Theme.of(context).colorScheme.onBackground,
           ),
       text2: comment,
-      text2Style: Theme.of(context).textTheme.overline!.copyWith(
+      text2Style: Theme.of(context).textTheme.labelSmall!.copyWith(
             color: Theme.of(context).colorScheme.onSurfaceVariant,
           ),
     );
