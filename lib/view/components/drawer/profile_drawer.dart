@@ -27,20 +27,12 @@ class ProfileDrawer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     const borderRadius = Radius.circular(20);
     return Drawer(
-      shape: const RoundedRectangleBorder(
-        side: BorderSide.none,
-        borderRadius: BorderRadius.only(
-          bottomRight: borderRadius,
-          topRight: borderRadius,
-        ),
-      ),
-      backgroundColor: Theme.of(context).colorScheme.background,
       child: Column(
         children: [
           UserAccountsDrawerHeader(
             decoration: BoxDecoration(
+                border: null,
                 borderRadius: const BorderRadius.only(
-                  bottomRight: borderRadius,
                   topRight: borderRadius,
                 ),
                 color: Theme.of(context).colorScheme.secondaryContainer),

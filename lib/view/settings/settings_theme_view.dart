@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pixgraphy/state/theme/extension/to_color.dart';
+import 'package:pixgraphy/state/theme/extension/to_name.dart';
 import 'package:pixgraphy/state/theme/model/app_seed_color.dart';
 import 'package:pixgraphy/state/theme/theme_provider.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
 
 class SettingsThemeView extends ConsumerWidget {
   const SettingsThemeView({super.key});
+
+  void toggleDarkMode(bool value, WidgetRef ref) {
+    ref.read(themeProvider.notifier).changeBrightness(
+          value ? Brightness.dark : Brightness.light,
+        );
+  }
+
+  changeSeedColor(AppSeedColor seedColor, WidgetRef ref) {
+    ref.read(themeProvider.notifier).changeAppSeedColor(seedColor);
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,57 +29,38 @@ class SettingsThemeView extends ConsumerWidget {
         title: const Text(Strings.appearance),
       ),
       body: ListView(
+        shrinkWrap: true,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Card(
-              child: ExpansionTile(
-                title: const Text(Strings.themeMode),
-                children: [
-                  ListTile(
-                    title: const Text(Strings.dark),
-                    selected: isDark,
-                    onTap: () =>
-                        ref.read(themeProvider.notifier).changeBrightness(
-                              Brightness.dark,
-                            ),
-                  ),
-                  ListTile(
-                    title: const Text(Strings.light),
-                    selected: !isDark,
-                    onTap: () =>
-                        ref.read(themeProvider.notifier).changeBrightness(
-                              Brightness.light,
-                            ),
-                  ),
-                ],
-              ),
+          ListTile(
+            title: const Text(Strings.darkMode),
+            trailing: Switch(
+              value: isDark,
+              onChanged: (value) => toggleDarkMode(value, ref),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Card(
-              child: ExpansionTile(
-                title: const Text(Strings.accentColor),
-                children: List.generate(AppSeedColor.values.length, (index) {
-                  final appSeedColor = AppSeedColor.values[index];
-                  return ListTile(
-                    title: Text(appSeedColor.name),
-                    selected: seedColor == appSeedColor,
-                    onTap: () => ref
-                        .read(themeProvider.notifier)
-                        .changeAppSeedColor(appSeedColor),
-                    leading: CircleAvatar(
-                      backgroundColor: appSeedColor.toColor.withOpacity(0.5),
-                      radius: 10,
-                      child: const SizedBox(
-                        height: 15,
-                        width: 15,
-                      ),
-                    ),
-                  );
-                }),
-              ),
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  Strings.accentColor,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                Wrap(
+                  spacing: 5.0,
+                  children: List.generate(AppSeedColor.values.length, (index) {
+                    final color = AppSeedColor.values[index];
+                    return FilterChip(
+                      label: Text(color.toName),
+                      labelStyle: TextStyle(color: color.toColor),
+                      selected: seedColor == color,
+                      onSelected: (selectedSeedColor) =>
+                          changeSeedColor(color, ref),
+                    );
+                  }),
+                )
+              ],
             ),
           )
         ],

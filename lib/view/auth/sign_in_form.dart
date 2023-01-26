@@ -83,7 +83,7 @@ class _SignInFormState extends ConsumerState<SignInForm> {
           const SizedBox(
             height: 8,
           ),
-          ElevatedButton(
+          FilledButton(
             onPressed: _signIn,
             child: const Text(
               Strings.signIn,

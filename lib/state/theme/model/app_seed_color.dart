@@ -1,8 +1,11 @@
 enum AppSeedColor {
-  red,
   purple,
+  indigo,
   blue,
+  teal,
   green,
-  orange,
   yellow,
+  orange,
+  deepOrange,
+  pink
 }

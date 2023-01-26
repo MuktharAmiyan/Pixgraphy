@@ -90,12 +90,12 @@ class UnsplashSearchDelegate extends SearchDelegate<Strings> {
     final themeState = wRef.watch(themeProvider);
     return ThemeData(
       useMaterial3: true,
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: themeState.seedColor.toColor,
-        brightness: themeState.brightness,
-      ),
-      scaffoldBackgroundColor:
-          themeState.brightness.toBool ? Colors.black : null,
+      colorScheme: themeState.seedColor.toColor == null
+          ? null
+          : ColorScheme.fromSeed(
+              seedColor: themeState.seedColor.toColor!,
+              brightness: themeState.brightness,
+            ),
       inputDecorationTheme: InputDecorationTheme(
         border: InputBorder.none,
         hintStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(

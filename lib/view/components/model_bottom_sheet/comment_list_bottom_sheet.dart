@@ -12,13 +12,6 @@ void commentsListBottomSheet({
     Scaffold.of(context).showBottomSheet(
       elevation: 1,
       enableDrag: true,
-      backgroundColor: Theme.of(context).colorScheme.surface,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(28),
-        ),
-      ),
-      clipBehavior: Clip.antiAlias,
       (context) => DraggableScrollableSheet(
         maxChildSize: .8,
         initialChildSize: .6,

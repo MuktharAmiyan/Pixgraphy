@@ -13,14 +13,7 @@ Future<void> likesListBottomSheet(
         elevation: 1,
         isScrollControlled: true,
         enableDrag: true,
-        backgroundColor: Theme.of(context).colorScheme.surface,
         context: context,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            top: Radius.circular(28),
-          ),
-        ),
-        clipBehavior: Clip.antiAlias,
         builder: (context) => DraggableScrollableSheet(
             maxChildSize: .8,
             expand: false,

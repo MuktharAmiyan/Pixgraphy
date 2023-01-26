@@ -10,8 +10,8 @@ class ContinueWithGoogleButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ElevatedButton.icon(
-      style: ElevatedButton.styleFrom(
+    return FilledButton.icon(
+      style: FilledButton.styleFrom(
         backgroundColor: Theme.of(context).colorScheme.inverseSurface,
         foregroundColor: Theme.of(context).backgroundColor,
       ),

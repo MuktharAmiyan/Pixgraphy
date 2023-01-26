@@ -73,7 +73,7 @@ class Strings {
   static const uid = 'uid';
   //THEME
   static const themeMode = 'Theme Mode';
-  static const dark = 'Dark';
+  static const darkMode = 'Dark Mode';
   static const light = 'Light';
   static const accentColor = 'Accent color';
 

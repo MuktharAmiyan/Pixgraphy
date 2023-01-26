@@ -7,7 +7,6 @@ void commentTextFieldBottomSheet({
 }) =>
     showModalBottomSheet(
         isScrollControlled: true,
-        backgroundColor: Theme.of(context).colorScheme.surface,
         context: context,
         builder: (context) => Padding(
               padding: EdgeInsets.only(

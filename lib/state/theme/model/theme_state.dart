@@ -12,6 +12,6 @@ class ThemeState with _$ThemeState {
 
   factory ThemeState.unKnown() => const ThemeState(
         brightness: Brightness.dark,
-        seedColor: AppSeedColor.red,
+        seedColor: AppSeedColor.purple,
       );
 }

@@ -143,7 +143,7 @@ class _EditProfileviewState extends ConsumerState<EditProfileview> {
                   const SizedBox(
                     height: 15,
                   ),
-                  ElevatedButton(
+                  FilledButton(
                     onPressed: _save,
                     child: const Text(Strings.save),
                   )

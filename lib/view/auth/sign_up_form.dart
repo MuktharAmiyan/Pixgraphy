@@ -120,7 +120,7 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
             const SizedBox(
               height: 8,
             ),
-            ElevatedButton(
+            FilledButton(
               onPressed: _signUp,
               child: const Text(
                 Strings.join,

@@ -49,7 +49,7 @@ class LandingView extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
+                  FilledButton(
                     onPressed:
                         ref.read(authStateProvider.notifier).signUpPressed,
                     child: const Text(Strings.join),

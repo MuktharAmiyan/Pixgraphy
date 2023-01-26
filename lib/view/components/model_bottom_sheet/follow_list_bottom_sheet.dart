@@ -11,22 +11,9 @@ Future<void> followListBottomSheet(
         required bool isFollowers,
         required Iterable<Follow> followList}) =>
     showModalBottomSheet<void>(
-        elevation: 1,
-        constraints: BoxConstraints(
-          minHeight: 100,
-          maxHeight: MediaQuery.of(context).size.height - 48,
-          maxWidth: 640,
-        ),
         isScrollControlled: true,
         enableDrag: true,
-        backgroundColor: Theme.of(context).colorScheme.surface,
         context: context,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            top: Radius.circular(28),
-          ),
-        ),
-        clipBehavior: Clip.antiAlias,
         builder: (context) => DraggableScrollableSheet(
             maxChildSize: .8,
             expand: false,

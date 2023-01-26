@@ -8,13 +8,6 @@ void showMenuBottomSheet({
       context: context,
       elevation: 1,
       enableDrag: true,
-      backgroundColor: Theme.of(context).colorScheme.surface,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(28),
-        ),
-      ),
-      clipBehavior: Clip.antiAlias,
       builder: (context) => DraggableScrollableSheet(
         maxChildSize: .8,
         initialChildSize: .4,

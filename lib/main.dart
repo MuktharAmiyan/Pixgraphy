@@ -1,10 +1,11 @@
+import 'dart:developer';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pixgraphy/firebase_options.dart';
 import 'package:pixgraphy/route/route.dart';
 import 'package:pixgraphy/state/notification/services/firebase_push_notification.dart';
-import 'package:pixgraphy/state/theme/extension/to_bool.dart';
 import 'package:pixgraphy/state/theme/extension/to_color.dart';
 import 'package:pixgraphy/state/theme/theme_provider.dart';
 
@@ -31,17 +32,19 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(goRouteProvider);
     final themeState = ref.watch(themeProvider);
+
     return MaterialApp.router(
       routerConfig: router,
-      title: 'My App',
+      title: 'Pixgraphy',
       theme: ThemeData(
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: themeState.seedColor.toColor,
-          brightness: themeState.brightness,
-        ),
-        scaffoldBackgroundColor:
-            themeState.brightness.toBool ? Colors.black : null,
+        brightness: themeState.brightness,
+        colorScheme: themeState.seedColor.toColor == null
+            ? null
+            : ColorScheme.fromSeed(
+                seedColor: themeState.seedColor.toColor!,
+                brightness: themeState.brightness,
+              ),
         inputDecorationTheme: InputDecorationTheme(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
