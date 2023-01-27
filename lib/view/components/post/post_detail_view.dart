@@ -13,12 +13,12 @@ import 'package:pixgraphy/view/components/post/network_image_view.dart';
 import 'package:pixgraphy/view/components/post/post_menu_list.dart';
 import 'package:pixgraphy/view/components/profile/profile_circle_avathar.dart';
 import 'package:pixgraphy/view/components/profile/profile_name.dart';
-import 'package:pixgraphy/view/components/snakbar/error_snakbar.dart';
 import 'package:pixgraphy/view/components/text/subtitle.dart';
 import 'package:pixgraphy/view/components/text/title.dart';
 import '../../../state/post/model/post.dart';
 import '../../../state/post/notifier/post_notifier.dart';
 import '../comment/comment_card.dart';
+import '../snakbar/snakbar_model.dart';
 
 class PostDetailView extends ConsumerWidget {
   final Post post;
@@ -32,8 +32,8 @@ class PostDetailView extends ConsumerWidget {
     final userId = ref.watch(userIdProvider);
     ref.listen(postProvider, (_, state) {
       state.maybeWhen(
-          failure: (failure) => ErrorSnackbar(
-                errorText: Strings.somethingwentwrong,
+          failure: (failure) => AppSnackbar(
+                message: Strings.somethingwentwrong,
                 context: context,
               ),
           deleted: () {

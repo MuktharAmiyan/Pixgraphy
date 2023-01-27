@@ -5,7 +5,6 @@ import 'package:pixgraphy/state/report/model/report_type.dart';
 import 'package:pixgraphy/state/report/notifier/report_notifier.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
 import 'package:pixgraphy/view/components/liner_progress/appbar_bottom_loading.dart';
-import 'package:pixgraphy/view/components/snakbar/error_snakbar.dart';
 import 'package:pixgraphy/view/components/snakbar/snakbar_model.dart';
 
 class ReportView extends ConsumerWidget {
@@ -39,8 +38,7 @@ class ReportView extends ConsumerWidget {
             context.pop();
           },
           failure: (_) {
-            ErrorSnackbar(
-                    errorText: Strings.somethingwentwrong, context: context)
+            AppSnackbar(message: Strings.somethingwentwrong, context: context)
                 .show;
           },
           orElse: () => null);

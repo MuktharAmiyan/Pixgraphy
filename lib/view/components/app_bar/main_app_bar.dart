@@ -15,7 +15,8 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
     final uid = ref.watch(userIdProvider);
     return AnimatedContainer(
       duration: const Duration(milliseconds: 800),
-      height: isShow ? 100 : 0,
+      curve: Curves.ease,
+      height: isShow ? 80 : 0,
       child: AppBar(
         elevation: 0,
         leading: Padding(
@@ -47,5 +48,5 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size(double.infinity, 120);
+  Size get preferredSize => const Size(double.infinity, 80);
 }

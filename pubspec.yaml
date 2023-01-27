@@ -29,6 +29,7 @@ dependencies:
   firebase_messaging: ^14.2.1
   http: ^0.13.5
   cached_network_image: ^3.2.3
+  connectivity_plus: ^3.0.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

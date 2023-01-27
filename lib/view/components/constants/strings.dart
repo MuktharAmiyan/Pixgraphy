@@ -123,7 +123,8 @@ class Strings {
       "Are you  sure you want to sign out ?";
   static const postDeleted = "Post deleted";
   static const save = "Save";
-
+  static const noInternetFound = "Oops no internet found !";
+  static const retry = "Retry";
   static const reportList = [
     'Violent or repulsive content',
     'Hateful or abusive content',

@@ -9,7 +9,6 @@ import 'package:pixgraphy/state/user_info/notifier/user_info_notifier.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
 import 'package:pixgraphy/view/components/liner_progress/appbar_bottom_loading.dart';
 import 'package:pixgraphy/view/components/profile/profile_circle_avathar.dart';
-import 'package:pixgraphy/view/components/snakbar/error_snakbar.dart';
 import 'package:pixgraphy/view/components/snakbar/snakbar_model.dart';
 
 class EditProfileview extends ConsumerStatefulWidget {
@@ -77,7 +76,7 @@ class _EditProfileviewState extends ConsumerState<EditProfileview> {
       state.maybeWhen(
         success: () => {ref.refresh(imagePickerProvider), context.pop()},
         faliure: () {
-          ErrorSnackbar(errorText: Strings.somethingwentwrong, context: context)
+          AppSnackbar(message: Strings.somethingwentwrong, context: context)
               .show;
         },
         orElse: () {},

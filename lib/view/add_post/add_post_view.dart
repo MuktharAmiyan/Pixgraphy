@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pixgraphy/view/add_post/create_post_view.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
 import 'package:pixgraphy/view/components/liner_progress/appbar_bottom_loading.dart';
-import 'package:pixgraphy/view/components/snakbar/error_snakbar.dart';
 import 'package:pixgraphy/view/components/snakbar/snakbar_model.dart';
 import '../../state/image_upload/notifier/image_picker_notifier.dart';
 import '../../state/image_upload/notifier/post_upload_notifier.dart';
@@ -36,8 +35,8 @@ class _AddPostState extends ConsumerState<AddPost> {
           descriptionController.clear();
           shotOnController.clear();
         },
-        thumbnailIsNull: (_) => ErrorSnackbar(
-          errorText: Strings.errorThumnailmsg,
+        thumbnailIsNull: (_) => AppSnackbar(
+          message: Strings.errorThumnailmsg,
           context: context,
         ).show,
         orElse: () => null,
@@ -47,9 +46,9 @@ class _AddPostState extends ConsumerState<AddPost> {
     ref.listen(postUploadProvider, (_, state) {
       state.maybeWhen(
           success: () => ref.refresh(imagePickerProvider),
-          failed: () => ErrorSnackbar(
-                  errorText: Strings.postUploadErrorMsg, context: context)
-              .show,
+          failed: () =>
+              AppSnackbar(message: Strings.postUploadErrorMsg, context: context)
+                  .show,
           orElse: () => null);
     });
     final isLoading = ref

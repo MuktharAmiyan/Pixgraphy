@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pixgraphy/state/auth/model/auth_failure.dart';
 import 'package:pixgraphy/view/components/snakbar/snakbar_model.dart';
-import 'package:pixgraphy/view/components/snakbar/error_snakbar.dart';
 import '../../state/auth/notifier/auth_state_notifier.dart';
 import '../components/app_logo/app_logo.dart';
 import '../components/google_auth_button/continue_with_google_button.dart';
@@ -18,8 +17,8 @@ class SignInView extends ConsumerWidget {
     ref.listen(
       authStateProvider,
       (_, authState) => authState.maybeMap(
-        error: (error) => ErrorSnackbar(
-          errorText: error.failure.toErrString,
+        error: (error) => AppSnackbar(
+          message: error.failure.toErrString,
           context: context,
         ).show,
         orElse: () => null,

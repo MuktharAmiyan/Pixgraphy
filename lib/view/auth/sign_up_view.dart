@@ -6,7 +6,6 @@ import 'package:pixgraphy/view/components/app_logo/app_logo.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
 import 'package:pixgraphy/view/components/google_auth_button/continue_with_google_button.dart';
 import 'package:pixgraphy/view/components/liner_progress/appbar_bottom_loading.dart';
-import 'package:pixgraphy/view/components/snakbar/error_snakbar.dart';
 import 'package:pixgraphy/view/components/snakbar/snakbar_model.dart';
 
 import '../../state/auth/notifier/auth_state_notifier.dart';
@@ -20,8 +19,8 @@ class SignUpView extends ConsumerWidget {
     ref.listen(
       authStateProvider,
       (_, authState) => authState.maybeMap(
-        error: (error) => ErrorSnackbar(
-          errorText: error.failure.toErrString,
+        error: (error) => AppSnackbar(
+          message: error.failure.toErrString,
           context: context,
         ).show,
         orElse: () => null,
