@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
 
@@ -7,23 +8,15 @@ class NetworkImageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(
-      url,
+    return CachedNetworkImage(
+      imageUrl: url,
       fit: BoxFit.cover,
-      loadingBuilder: (_, child, loadingProgress) {
-        if (loadingProgress == null) {
-          return child;
-        }
+      progressIndicatorBuilder: (_, url, loadingProgress) {
         return Center(
-          child: CircularProgressIndicator(
-            value: loadingProgress.expectedTotalBytes != null
-                ? loadingProgress.cumulativeBytesLoaded /
-                    loadingProgress.expectedTotalBytes!
-                : null,
-          ),
+          child: CircularProgressIndicator(value: loadingProgress.progress),
         );
       },
-      errorBuilder: (_, __, ___) => Center(
+      errorWidget: (_, __, ___) => Center(
         child: Text(
           Strings.imageErrorMsg,
           textAlign: TextAlign.center,
@@ -32,17 +25,6 @@ class NetworkImageView extends StatelessWidget {
               ),
         ),
       ),
-      frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
-        if (wasSynchronouslyLoaded) {
-          return child;
-        }
-        return AnimatedOpacity(
-          opacity: frame == null ? 0 : 1,
-          duration: const Duration(seconds: 1),
-          curve: Curves.easeOut,
-          child: child,
-        );
-      },
     );
   }
 }

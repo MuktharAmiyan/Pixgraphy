@@ -149,6 +149,7 @@ class UserSearchDelegate extends SearchDelegate<Strings> {
     final themeState = wRef.watch(themeProvider);
     return ThemeData(
       useMaterial3: true,
+      brightness: themeState.brightness,
       colorScheme: themeState.seedColor.toColor == null
           ? null
           : ColorScheme.fromSeed(

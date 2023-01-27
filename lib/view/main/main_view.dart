@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -7,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:pixgraphy/state/auth/notifier/auth_state_notifier.dart';
 import 'package:pixgraphy/state/post/provider/feed_provider.dart';
 import 'package:pixgraphy/state/user_info/provider/user_info_provider.dart';
+import 'package:pixgraphy/view/components/app_bar/main_app_bar.dart';
 import 'package:pixgraphy/view/components/constants/strings.dart';
 import 'package:pixgraphy/view/components/delegate/user_search_delegate.dart';
 import 'package:pixgraphy/view/components/post/masonary_post_grid_view.dart';
@@ -64,33 +63,34 @@ class _MainViewState extends ConsumerState<MainView> {
       );
     });
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Builder(builder: (context) {
-            return ProfileCircleAvatar(
-              uid: uid,
-              onTap: () => Scaffold.of(context).openDrawer(),
-            );
-          }),
-        ),
-        title: const AppLogo(
-          size: 20,
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () async {
-              await showSearch(
-                context: context,
-                delegate: UserSearchDelegate(ref),
-              );
-            },
-            icon: const Icon(Icons.search_outlined),
-          )
-        ],
-      ),
+      appBar: MainAppBar(_showBottom),
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   leading: Padding(
+      //     padding: const EdgeInsets.all(8.0),
+      //     child: Builder(builder: (context) {
+      //       return ProfileCircleAvatar(
+      //         uid: uid,
+      //         onTap: () => Scaffold.of(context).openDrawer(),
+      //       );
+      //     }),
+      //   ),
+      //   title: const AppLogo(
+      //     size: 20,
+      //   ),
+      //   centerTitle: true,
+      //   actions: [
+      //     IconButton(
+      //       onPressed: () async {
+      //         await showSearch(
+      //           context: context,
+      //           delegate: UserSearchDelegate(ref),
+      //         );
+      //       },
+      //       icon: const Icon(Icons.search_outlined),
+      //     )
+      //   ],
+      // ),
       drawer: ProfileDrawer(
         uid: uid,
       ),
