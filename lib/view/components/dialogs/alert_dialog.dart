@@ -20,12 +20,19 @@ extension Show<T> on AlertDialogModel<T> {
           content: Text(content),
           actions: action.entries
               .map(
-                (entry) => TextButton(
-                  onPressed: () => Navigator.of(context).pop(entry.value),
-                  child: Text(
-                    entry.key,
-                  ),
-                ),
+                (entry) => entry.value == true
+                    ? FilledButton(
+                        onPressed: () => Navigator.of(context).pop(entry.value),
+                        child: Text(
+                          entry.key,
+                        ),
+                      )
+                    : TextButton(
+                        onPressed: () => Navigator.of(context).pop(entry.value),
+                        child: Text(
+                          entry.key,
+                        ),
+                      ),
               )
               .toList(),
         ),

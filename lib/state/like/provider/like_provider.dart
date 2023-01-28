@@ -22,6 +22,7 @@ final likeProvider = StreamProvider.family
         doc.data(),
       ),
     );
+
     controller.add(likes);
   });
 
