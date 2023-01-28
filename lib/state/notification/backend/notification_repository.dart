@@ -1,16 +1,22 @@
 import 'dart:convert' show json, Encoding;
 import 'dart:developer';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
+import 'package:pixgraphy/core/firebase/firebase_firestore.dart';
+import 'package:pixgraphy/state/constant/firebase_const.dart';
 import 'package:pixgraphy/state/notification/model/send_notification.dart';
 import '../../../api_keys.dart';
+import '../model/notification.dart';
 
 final notificationrepositoryProvider = Provider<NotificationRepository>((ref) {
-  return NotificationRepository();
+  final firebase = ref.read(firebaseFirestoreProvider);
+  return NotificationRepository(firebase);
 });
 
 class NotificationRepository {
-  NotificationRepository();
+  final FirebaseFirestore firebaseFirestore;
+  NotificationRepository(this.firebaseFirestore);
   final postUrl = 'https://fcm.googleapis.com/fcm/send';
   final headers = {
     'content-type': 'application/json',
@@ -46,6 +52,16 @@ class NotificationRepository {
       }
     } catch (_) {
       return;
+    }
+  }
+
+  void saveNitificationFirebase(UserNotification notification) async {
+    try {
+      await firebaseFirestore
+          .collection(FirebaseCollectionName.notification)
+          .add(notification.toMap());
+    } catch (e) {
+      log(e.toString());
     }
   }
 }

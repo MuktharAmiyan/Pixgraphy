@@ -12,12 +12,15 @@ class FirebaseCollectionName {
   static const thumbnail = 'Thumbnail';
   static const profilePic = 'Profile_pic';
   static const report = 'Report';
+  static const notification = 'Notification';
 }
 
 @immutable
 class FirebaseFieldName {
   const FirebaseFieldName._();
   static const uid = 'uid';
+  static const to = 'to';
+  static const notificationType = 'notification_type';
   static const name = 'name';
   static const userName = 'user_name';
   static const photoUrl = 'photo_url';

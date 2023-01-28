@@ -3,6 +3,9 @@ import 'package:pixgraphy/core/firebase/firebase_firestore.dart';
 import 'package:pixgraphy/state/auth/provider/user_id_provider.dart';
 import 'package:pixgraphy/state/constant/firebase_const.dart';
 import 'package:pixgraphy/state/follow/model/follow.dart';
+import 'package:pixgraphy/state/notification/backend/notification_repository.dart';
+import 'package:pixgraphy/state/notification/model/notification.dart';
+import 'package:pixgraphy/state/notification/model/notification_type.dart';
 import 'package:pixgraphy/state/notification/model/send_follow_notification_request.dart';
 import 'package:pixgraphy/state/notification/provider/send_follow_notification.dart';
 
@@ -12,6 +15,7 @@ final followUnfollowProvider = FutureProvider.family.autoDispose<bool, String>((
 ) async {
   final firestore = ref.read(firebaseFirestoreProvider);
   final uid = ref.read(userIdProvider);
+  final notificationRepository = ref.read(notificationrepositoryProvider);
   if (uid == null) {
     return false;
   }
@@ -59,6 +63,14 @@ final followUnfollowProvider = FutureProvider.family.autoDispose<bool, String>((
       ref.read(
         sendFollownotificationProvider(
           SendFollowNotificationRequest(uid, followUid),
+        ),
+      );
+      notificationRepository.saveNitificationFirebase(
+        UserNotification(
+          uid: uid,
+          to: followUid,
+          type: NotificationType.follow,
+          id: followUid,
         ),
       );
 

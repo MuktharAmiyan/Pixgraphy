@@ -16,6 +16,7 @@ class RouteName {
   static const report = 'report';
   static const unPostDetail = 'explore-post-detail';
   static const postFull = 'post-full-view';
+  static const notification = 'notification';
 }
 
 @immutable
@@ -37,4 +38,5 @@ class RoutePath {
   static const editProfile = 'edit-profile';
   static const report = '/report/:id';
   static const postFull = '/post-full-view';
+  static const notification = '/notification';
 }

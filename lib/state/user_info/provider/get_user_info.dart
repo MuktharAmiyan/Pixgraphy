@@ -4,16 +4,16 @@ import 'package:pixgraphy/core/firebase/firebase_firestore.dart';
 import 'package:pixgraphy/state/constant/firebase_const.dart';
 import 'package:pixgraphy/state/user_info/model/user_info_model.dart';
 
-// final getUserInfoProvider = FutureProvider.family
-//     .autoDispose<UserInfoModel, String>((ref, String uid) async {
-//   final firestore = ref.read(firebaseFirestoreProvider);
+final getUserInfoFutureProvider = FutureProvider.family
+    .autoDispose<UserInfoModel, String>((ref, String uid) async {
+  final firestore = ref.read(firebaseFirestoreProvider);
 
-//   return firestore.collection(FirebaseCollectionName.users).doc(uid).get().then(
-//         (doc) => UserInfoModel.fromMap(
-//           doc.data()!,
-//         ),
-//       );
-// });
+  return firestore.collection(FirebaseCollectionName.users).doc(uid).get().then(
+        (doc) => UserInfoModel.fromMap(
+          doc.data()!,
+        ),
+      );
+});
 
 final getUserInfoProviderProvider = Provider<UserInfo>((ref) {
   final firestore = ref.read(firebaseFirestoreProvider);

@@ -97,7 +97,8 @@ class Strings {
   static const errorThumnailmsg = "While making thumbnail pic another Image";
   static const postUploadErrorMsg =
       "Something went wrong. image cannot be uploaded. Please try again.";
-  static const somethingwentwrong = "Something went wrong.Please try again.";
+  static const somethingwentwrong =
+      "Oops Something went wrong.Please try again.";
 
   static const searchUser = "Search user";
   static const searchUnPosts = "Search unsplash posts";
@@ -125,6 +126,9 @@ class Strings {
   static const save = "Save";
   static const noInternetFound = "Oops no internet found !";
   static const retry = "Retry";
+  static const notification = "Notification";
+  static const noNotification = "No Notification";
+  static const commentedYourPost = "Commented your post";
   static const reportList = [
     'Violent or repulsive content',
     'Hateful or abusive content',

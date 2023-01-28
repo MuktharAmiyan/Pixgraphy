@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pixgraphy/route/route_const.dart';
+import 'package:pixgraphy/state/notification/model/notification.dart';
 import 'package:pixgraphy/state/post/model/post.dart';
 import 'package:pixgraphy/state/report/model/report_type.dart';
 import 'package:pixgraphy/state/unsplash/model/unsplash_post.dart';
@@ -14,6 +15,7 @@ import 'package:pixgraphy/view/components/post/post_detail_view.dart';
 import 'package:pixgraphy/view/components/post/post_full_view.dart';
 import 'package:pixgraphy/view/components/unsplash/unsplash_post_detail_view.dart';
 import 'package:pixgraphy/view/main/main_view.dart';
+import 'package:pixgraphy/view/notification/user_notification_view.dart';
 import 'package:pixgraphy/view/profile/edit_profile_view.dart';
 import 'package:pixgraphy/view/profile/profile_view.dart';
 import 'package:pixgraphy/view/report/report_view.dart';
@@ -154,6 +156,11 @@ class RouterNotifier extends ChangeNotifier {
           builder: (context, state) => PostFullView(
             url: state.extra as String,
           ),
+        ),
+        GoRoute(
+          name: RouteName.notification,
+          path: RoutePath.notification,
+          builder: (context, state) => const UserNotificationView(),
         )
       ];
 }

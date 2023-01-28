@@ -114,9 +114,8 @@ class _MainViewState extends ConsumerState<MainView> {
                 icon: const Icon(Icons.travel_explore),
               ),
               IconButton(
-                onPressed: () {
-                  log("message");
-                },
+                tooltip: Strings.notification,
+                onPressed: () => context.push(RoutePath.notification),
                 icon: const Icon(Icons.notifications_outlined),
               )
             ],
