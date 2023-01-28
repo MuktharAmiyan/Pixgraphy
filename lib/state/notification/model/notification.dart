@@ -13,11 +13,14 @@ class UserNotification {
   final NotificationType type;
   @JsonKey(name: FirebaseFieldName.id)
   final String id;
+  @JsonKey(name: FirebaseFieldName.createdAt)
+  final DateTime createdAt;
   UserNotification({
     required this.uid,
     required this.to,
     required this.type,
     required this.id,
+    required this.createdAt,
   });
   Map<String, dynamic> toMap() => _$UserNotificationToJson(this);
   factory UserNotification.fromMap(Map<String, dynamic> json) =>

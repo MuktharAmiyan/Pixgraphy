@@ -78,6 +78,7 @@ final likeDislikeProvider = FutureProvider.family.autoDispose<bool, String>((
             to: post.uid,
             type: NotificationType.like,
             id: postId,
+            createdAt: DateTime.now(),
           ),
         );
       }

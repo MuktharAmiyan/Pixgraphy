@@ -12,6 +12,7 @@ UserNotification _$UserNotificationFromJson(Map<String, dynamic> json) =>
       to: json['to'] as String,
       type: $enumDecode(_$NotificationTypeEnumMap, json['notification_type']),
       id: json['id'] as String,
+      createdAt: DateTime.parse(json['created_at'] as String),
     );
 
 Map<String, dynamic> _$UserNotificationToJson(UserNotification instance) =>
@@ -20,6 +21,7 @@ Map<String, dynamic> _$UserNotificationToJson(UserNotification instance) =>
       'to': instance.to,
       'notification_type': _$NotificationTypeEnumMap[instance.type]!,
       'id': instance.id,
+      'created_at': instance.createdAt.toIso8601String(),
     };
 
 const _$NotificationTypeEnumMap = {

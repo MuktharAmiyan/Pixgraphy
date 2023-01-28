@@ -18,6 +18,10 @@ final userNotificationProvider =
   firebasefirestore
       .collection(FirebaseCollectionName.notification)
       .where(FirebaseFieldName.to, isEqualTo: uid)
+      .orderBy(
+        FirebaseFieldName.createdAt,
+        descending: true,
+      )
       .get()
       .then((snapShot) {
     final userNotifications = snapShot.docs.map(

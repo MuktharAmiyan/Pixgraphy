@@ -71,6 +71,7 @@ final followUnfollowProvider = FutureProvider.family.autoDispose<bool, String>((
           to: followUid,
           type: NotificationType.follow,
           id: followUid,
+          createdAt: DateTime.now(),
         ),
       );
 
