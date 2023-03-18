@@ -1,7 +1,18 @@
-# Pixgraphy
-![pixgraphy cover](https://user-images.githubusercontent.com/92439059/226114482-d15870f2-dcb4-4fd1-ada6-82ff79026d59.png)
 
+![pixgraphy cover](https://user-images.githubusercontent.com/92439059/226114482-d15870f2-dcb4-4fd1-ada6-82ff79026d59.png)
+# PIXGRAPHY 
 Pixgraphy is a social media app designed specifically for photographers to share their work, discover new artists, and connect with like-minded individuals. This app is built using the Flutter framework and utilizes Firebase for authentication and backend services. State management is handled using Riverpod, and the Go Router is used for routing. The app is designed with Material 3 inspired design principles.
+
+## Libraries & Tools Used
+* firebase_auth
+* cloud_firestore
+* flutter_riverpod
+* freezed
+* google_sign_in
+* go_router
+* firebase_storage
+* firebase_messaging
+* http
 
 ## Features
 
@@ -20,3 +31,4 @@ Pixgraphy offers the following features:
 * Support for dark theme, light theme
 * Selection of color schemes
 * Report option on user,post and comment
+
