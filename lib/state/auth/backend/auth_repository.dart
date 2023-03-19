@@ -114,7 +114,7 @@ class AuthRepository {
           userName,
         );
         final uid = userCredential.user!.uid;
-        
+
         final token = await _getToken();
         final userInfoModel = UserInfoModel(
             uid: uid,

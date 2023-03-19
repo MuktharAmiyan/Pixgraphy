@@ -16,7 +16,7 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 800),
       curve: Curves.ease,
-      height: isShow ? 80 : 0,
+      height: isShow ? 120 : 0,
       child: AppBar(
         elevation: 0,
         leading: Padding(

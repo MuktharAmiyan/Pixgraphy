@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pixgraphy/route/route_const.dart';
-import 'package:pixgraphy/state/notification/model/notification.dart';
 import 'package:pixgraphy/state/post/model/post.dart';
 import 'package:pixgraphy/state/report/model/report_type.dart';
 import 'package:pixgraphy/state/unsplash/model/unsplash_post.dart';

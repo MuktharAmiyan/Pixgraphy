@@ -102,7 +102,7 @@ class _MainViewState extends ConsumerState<MainView> {
       bottomNavigationBar: AnimatedContainer(
         duration: const Duration(milliseconds: 800),
         curve: Curves.ease,
-        height: _showBottom ? 60 : 0,
+        height: _showBottom ? 80 : 0,
         child: BottomAppBar(
           clipBehavior: Clip.antiAlias,
           child: Row(

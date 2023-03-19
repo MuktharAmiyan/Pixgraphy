@@ -45,8 +45,5 @@ app.*.map.json
 
 
 # Hide key from version control
-<<<<<<< HEAD
 api_keys.dart
-=======
-api_key
->>>>>>> 2373f36fea631d098865e77a58ef964f2da0541b
+firebase_options.dart
