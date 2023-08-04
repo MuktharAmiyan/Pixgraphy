@@ -40,7 +40,7 @@ class ProfileDrawer extends ConsumerWidget {
           ListTile(
             onTap: () => {
               context.pushNamed(Strings.profile,
-                  params: {FirebaseFieldName.uid: uid!}),
+                  pathParameters: {FirebaseFieldName.uid: uid!}),
               Scaffold.of(context).closeDrawer(),
             },
             leading: const Icon(Icons.person_outline),

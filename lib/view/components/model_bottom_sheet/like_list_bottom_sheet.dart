@@ -43,7 +43,7 @@ Future<void> likesListBottomSheet(
                           onTap: () => {
                             context.pushNamed(
                               RouteName.profile,
-                              params: {
+                              pathParameters: {
                                 FirebaseFieldName.uid: uid,
                               },
                             ),

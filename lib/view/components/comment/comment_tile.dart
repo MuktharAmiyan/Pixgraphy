@@ -37,8 +37,8 @@ class CommentTile extends ConsumerWidget {
     return ListTile(
       leading: ProfileCircleAvatar(
         uid: uid,
-        onTap: () => context
-            .pushNamed(RouteName.profile, params: {FirebaseFieldName.uid: uid}),
+        onTap: () => context.pushNamed(RouteName.profile,
+            pathParameters: {FirebaseFieldName.uid: uid}),
       ),
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,7 +71,7 @@ class CommentTile extends ConsumerWidget {
                       onTap: () {
                         context.pushNamed(RouteName.report,
                             extra: ReportType.comment,
-                            params: {FirebaseFieldName.id: comment.id});
+                            pathParameters: {FirebaseFieldName.id: comment.id});
                       },
                     ),
                     if (currentUid != null && currentUid == uid)

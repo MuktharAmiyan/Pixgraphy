@@ -69,7 +69,7 @@ class UserSearchDelegate extends SearchDelegate<Strings> {
                       onTap: () {
                         context.pushNamed(
                           RouteName.profile,
-                          params: {
+                          pathParameters: {
                             FirebaseFieldName.uid: user.uid,
                           },
                         );
@@ -123,7 +123,7 @@ class UserSearchDelegate extends SearchDelegate<Strings> {
                       onTap: () {
                         context.pushNamed(
                           RouteName.profile,
-                          params: {
+                          pathParameters: {
                             FirebaseFieldName.uid: user.uid,
                           },
                         );

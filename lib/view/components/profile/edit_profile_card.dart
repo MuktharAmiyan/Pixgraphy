@@ -17,7 +17,8 @@ class EditProfileCard extends ConsumerWidget {
     return UserMiniCard(
       onTap: () {
         ref.read(getUserInfoProviderProvider).getUser(uid).then((user) {
-          context.pushNamed(RouteName.editProfile, extra: user, params: {
+          context
+              .pushNamed(RouteName.editProfile, extra: user, pathParameters: {
             FirebaseFieldName.uid: uid,
           });
         });

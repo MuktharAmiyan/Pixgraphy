@@ -47,9 +47,9 @@ class RouterNotifier extends ChangeNotifier {
 
   String? _redirectLogic(BuildContext context, GoRouterState state) {
     final authState = ref.read(authStateProvider);
-    final areWeLanding = state.location == RoutePath.landing;
-    final areWeSignIn = state.location == RoutePath.signIn;
-    final areWeSignUp = state.location == RoutePath.signUp;
+    final areWeLanding = state.path == RoutePath.landing;
+    final areWeSignIn = state.path == RoutePath.signIn;
+    final areWeSignUp = state.path == RoutePath.signUp;
 
     return authState.maybeMap(
       unKnown: (_) => areWeLanding ? null : RoutePath.landing,
@@ -58,9 +58,9 @@ class RouterNotifier extends ChangeNotifier {
       signUp: (_) => areWeSignUp ? null : RoutePath.signUp,
       error: (_) => areWeLanding ? null : RoutePath.landing,
       orElse: () {
-        if (state.location == RoutePath.landing ||
-            state.location == RoutePath.signIn ||
-            state.location == RoutePath.signUp) {
+        if (state.path == RoutePath.landing ||
+            state.path == RoutePath.signIn ||
+            state.path == RoutePath.signUp) {
           return RoutePath.main;
         }
         return null;
@@ -105,7 +105,7 @@ class RouterNotifier extends ChangeNotifier {
             name: RouteName.profile,
             path: RoutePath.profile,
             builder: (context, state) => ProfileView(
-                  uid: state.params[FirebaseFieldName.uid]!,
+                  uid: state.pathParameters[FirebaseFieldName.uid]!,
                 ),
             routes: [
               GoRoute(
@@ -146,7 +146,7 @@ class RouterNotifier extends ChangeNotifier {
           path: RoutePath.report,
           builder: (context, state) => ReportView(
             reportType: state.extra as ReportType,
-            id: state.params[FirebaseFieldName.id]!,
+            id: state.pathParameters[FirebaseFieldName.id]!,
           ),
         ),
         GoRoute(

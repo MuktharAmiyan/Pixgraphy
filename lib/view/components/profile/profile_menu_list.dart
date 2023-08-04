@@ -28,7 +28,8 @@ class ProfileMenuList extends StatelessWidget {
           ),
           onTap: () {
             context.pushNamed(RouteName.report,
-                extra: ReportType.user, params: {FirebaseFieldName.id: uid});
+                extra: ReportType.user,
+                pathParameters: {FirebaseFieldName.id: uid});
           },
         ),
       ],

@@ -42,7 +42,7 @@ Future<void> followListBottomSheet(
                         onTap: () => {
                           context.pushNamed(
                             RouteName.profile,
-                            params: {
+                            pathParameters: {
                               FirebaseFieldName.uid: uid,
                             },
                           ),
