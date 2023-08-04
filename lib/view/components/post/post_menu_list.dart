@@ -37,7 +37,7 @@ class PostMenuList extends ConsumerWidget {
           onTap: () {
             context.pushNamed(RouteName.report,
                 extra: ReportType.post,
-                params: {FirebaseFieldName.id: post.postId});
+                pathParameters: {FirebaseFieldName.id: post.postId});
           },
         ),
         if (userId != null && userId == post.uid)

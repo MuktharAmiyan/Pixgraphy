@@ -68,7 +68,7 @@ class PostDetailView extends ConsumerWidget {
                             uid: post.uid,
                             onTap: () => context.pushNamed(
                               RouteName.profile,
-                              params: {FirebaseFieldName.uid: post.uid},
+                              pathParameters: {FirebaseFieldName.uid: post.uid},
                             ),
                           ),
                           Padding(
@@ -81,7 +81,9 @@ class PostDetailView extends ConsumerWidget {
                                   uid: post.uid,
                                   onTap: () => context.pushNamed(
                                     RouteName.profile,
-                                    params: {FirebaseFieldName.uid: post.uid},
+                                    pathParameters: {
+                                      FirebaseFieldName.uid: post.uid
+                                    },
                                   ),
                                 ),
                                 SubTitleWidget(

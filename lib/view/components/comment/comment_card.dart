@@ -69,9 +69,9 @@ class CommentCard extends ConsumerWidget {
                       error: (_, __) => [],
                       loading: () => [],
                     ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: const [
+                  children: [
                     Padding(
                       padding: EdgeInsets.all(8),
                       child: SubTitleWidget(text: Strings.showMore),
