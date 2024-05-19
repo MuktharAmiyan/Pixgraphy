@@ -9,7 +9,7 @@ class TitleWidget extends StatelessWidget {
     return Text(
       text,
       style: Theme.of(context).textTheme.titleMedium!.copyWith(
-            color: Theme.of(context).colorScheme.onBackground,
+            color: Theme.of(context).colorScheme.onSurface,
           ),
     );
   }

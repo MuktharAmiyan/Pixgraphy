@@ -22,7 +22,7 @@ class ProfileName extends ConsumerWidget {
             data: (user) => user.name, error: (_, __) => '', loading: () => ''),
         style: style ??
             Theme.of(context).textTheme.titleMedium!.copyWith(
-                  color: Theme.of(context).colorScheme.onBackground,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
       ),
     );

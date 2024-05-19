@@ -12,10 +12,10 @@ import 'comment_on_tap_tile.dart';
 
 class CommentCard extends ConsumerWidget {
   const CommentCard({
-    Key? key,
+    super.key,
     required this.post,
     required this.userId,
-  }) : super(key: key);
+  });
 
   final Post post;
   final String? userId;

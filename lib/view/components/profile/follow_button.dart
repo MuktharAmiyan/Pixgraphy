@@ -23,7 +23,7 @@ class FollowButtonCard extends ConsumerWidget {
               return ColumnTwoTextCard(
                 icon: Icon(
                   isFollowed ? Icons.done : Icons.person_outline,
-                  color: Theme.of(context).colorScheme.background,
+                  color: Theme.of(context).colorScheme.surface,
                 ),
                 subTitle: isFollowed ? Strings.unfollow : Strings.follow,
               );

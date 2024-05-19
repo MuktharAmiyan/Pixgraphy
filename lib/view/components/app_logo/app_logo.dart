@@ -18,7 +18,7 @@ class AppLogo extends StatelessWidget {
             fontSize: size,
             fontWeight: FontWeight.bold,
             height: .77,
-            color: color ?? Theme.of(context).colorScheme.onBackground,
+            color: color ?? Theme.of(context).colorScheme.onSurface,
           ),
     );
   }

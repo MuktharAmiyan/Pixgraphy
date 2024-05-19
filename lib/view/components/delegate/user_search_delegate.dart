@@ -55,7 +55,7 @@ class UserSearchDelegate extends SearchDelegate<Strings> {
                     child: Text(
                       Strings.noUserFound,
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                            color: Theme.of(context).colorScheme.onBackground,
+                            color: Theme.of(context).colorScheme.onSurface,
                           ),
                     ),
                   );
@@ -109,7 +109,7 @@ class UserSearchDelegate extends SearchDelegate<Strings> {
                     child: Text(
                       Strings.noUserFound,
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                            color: Theme.of(context).colorScheme.onBackground,
+                            color: Theme.of(context).colorScheme.onSurface,
                           ),
                     ),
                   );

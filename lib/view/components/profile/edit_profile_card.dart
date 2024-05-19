@@ -26,7 +26,7 @@ class EditProfileCard extends ConsumerWidget {
       child: ColumnTwoTextCard(
         icon: Icon(
           Icons.settings_outlined,
-          color: Theme.of(context).colorScheme.background,
+          color: Theme.of(context).colorScheme.surface,
         ),
         subTitle: Strings.editprofile,
       ),

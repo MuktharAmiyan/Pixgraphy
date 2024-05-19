@@ -12,7 +12,7 @@ part of 'comment_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CommentFailure {}
@@ -36,25 +36,25 @@ class _$CommentFailureCopyWithImpl<$Res, $Val extends CommentFailure>
 }
 
 /// @nodoc
-abstract class _$$_CommentFailureCopyWith<$Res> {
-  factory _$$_CommentFailureCopyWith(
-          _$_CommentFailure value, $Res Function(_$_CommentFailure) then) =
-      __$$_CommentFailureCopyWithImpl<$Res>;
+abstract class _$$CommentFailureImplCopyWith<$Res> {
+  factory _$$CommentFailureImplCopyWith(_$CommentFailureImpl value,
+          $Res Function(_$CommentFailureImpl) then) =
+      __$$CommentFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_CommentFailureCopyWithImpl<$Res>
-    extends _$CommentFailureCopyWithImpl<$Res, _$_CommentFailure>
-    implements _$$_CommentFailureCopyWith<$Res> {
-  __$$_CommentFailureCopyWithImpl(
-      _$_CommentFailure _value, $Res Function(_$_CommentFailure) _then)
+class __$$CommentFailureImplCopyWithImpl<$Res>
+    extends _$CommentFailureCopyWithImpl<$Res, _$CommentFailureImpl>
+    implements _$$CommentFailureImplCopyWith<$Res> {
+  __$$CommentFailureImplCopyWithImpl(
+      _$CommentFailureImpl _value, $Res Function(_$CommentFailureImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_CommentFailure implements _CommentFailure {
-  const _$_CommentFailure();
+class _$CommentFailureImpl implements _CommentFailure {
+  const _$CommentFailureImpl();
 
   @override
   String toString() {
@@ -62,9 +62,9 @@ class _$_CommentFailure implements _CommentFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_CommentFailure);
+        (other.runtimeType == runtimeType && other is _$CommentFailureImpl);
   }
 
   @override
@@ -72,5 +72,5 @@ class _$_CommentFailure implements _CommentFailure {
 }
 
 abstract class _CommentFailure implements CommentFailure {
-  const factory _CommentFailure() = _$_CommentFailure;
+  const factory _CommentFailure() = _$CommentFailureImpl;
 }

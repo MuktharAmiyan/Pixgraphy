@@ -50,7 +50,7 @@ class ProfileView extends ConsumerWidget {
                 Text(
                   Strings.photos,
                   style: Theme.of(context).textTheme.displaySmall!.copyWith(
-                        color: Theme.of(context).colorScheme.onBackground,
+                        color: Theme.of(context).colorScheme.onSurface,
                       ),
                 ),
                 if (currentUser != null && isCurrentUser)

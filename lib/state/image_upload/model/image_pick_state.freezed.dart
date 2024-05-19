@@ -12,7 +12,7 @@ part of 'image_pick_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ImagePickState {
@@ -93,24 +93,25 @@ class _$ImagePickStateCopyWithImpl<$Res, $Val extends ImagePickState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$ImagePickStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$ImagePickStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -118,9 +119,9 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -208,28 +209,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements ImagePickState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading value, $Res Function(_$_Loading) then) =
-      __$$_LoadingCopyWithImpl<$Res>;
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res>
-    extends _$ImagePickStateCopyWithImpl<$Res, _$_Loading>
-    implements _$$_LoadingCopyWith<$Res> {
-  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$ImagePickStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$LoadingImpl implements _Loading {
+  const _$LoadingImpl();
 
   @override
   String toString() {
@@ -237,9 +239,9 @@ class _$_Loading implements _Loading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading);
+        (other.runtimeType == runtimeType && other is _$LoadingImpl);
   }
 
   @override
@@ -327,29 +329,29 @@ class _$_Loading implements _Loading {
 }
 
 abstract class _Loading implements ImagePickState {
-  const factory _Loading() = _$_Loading;
+  const factory _Loading() = _$LoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_ThumbnailIsNullCopyWith<$Res> {
-  factory _$$_ThumbnailIsNullCopyWith(
-          _$_ThumbnailIsNull value, $Res Function(_$_ThumbnailIsNull) then) =
-      __$$_ThumbnailIsNullCopyWithImpl<$Res>;
+abstract class _$$ThumbnailIsNullImplCopyWith<$Res> {
+  factory _$$ThumbnailIsNullImplCopyWith(_$ThumbnailIsNullImpl value,
+          $Res Function(_$ThumbnailIsNullImpl) then) =
+      __$$ThumbnailIsNullImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ThumbnailIsNullCopyWithImpl<$Res>
-    extends _$ImagePickStateCopyWithImpl<$Res, _$_ThumbnailIsNull>
-    implements _$$_ThumbnailIsNullCopyWith<$Res> {
-  __$$_ThumbnailIsNullCopyWithImpl(
-      _$_ThumbnailIsNull _value, $Res Function(_$_ThumbnailIsNull) _then)
+class __$$ThumbnailIsNullImplCopyWithImpl<$Res>
+    extends _$ImagePickStateCopyWithImpl<$Res, _$ThumbnailIsNullImpl>
+    implements _$$ThumbnailIsNullImplCopyWith<$Res> {
+  __$$ThumbnailIsNullImplCopyWithImpl(
+      _$ThumbnailIsNullImpl _value, $Res Function(_$ThumbnailIsNullImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ThumbnailIsNull implements _ThumbnailIsNull {
-  const _$_ThumbnailIsNull();
+class _$ThumbnailIsNullImpl implements _ThumbnailIsNull {
+  const _$ThumbnailIsNullImpl();
 
   @override
   String toString() {
@@ -357,9 +359,9 @@ class _$_ThumbnailIsNull implements _ThumbnailIsNull {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ThumbnailIsNull);
+        (other.runtimeType == runtimeType && other is _$ThumbnailIsNullImpl);
   }
 
   @override
@@ -447,24 +449,25 @@ class _$_ThumbnailIsNull implements _ThumbnailIsNull {
 }
 
 abstract class _ThumbnailIsNull implements ImagePickState {
-  const factory _ThumbnailIsNull() = _$_ThumbnailIsNull;
+  const factory _ThumbnailIsNull() = _$ThumbnailIsNullImpl;
 }
 
 /// @nodoc
-abstract class _$$_SuccessCopyWith<$Res> {
-  factory _$$_SuccessCopyWith(
-          _$_Success value, $Res Function(_$_Success) then) =
-      __$$_SuccessCopyWithImpl<$Res>;
+abstract class _$$SuccessImplCopyWith<$Res> {
+  factory _$$SuccessImplCopyWith(
+          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
+      __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {ImageWithThumbnailAndAspectRatio imageWithThumbnailAndAspectRatio});
 }
 
 /// @nodoc
-class __$$_SuccessCopyWithImpl<$Res>
-    extends _$ImagePickStateCopyWithImpl<$Res, _$_Success>
-    implements _$$_SuccessCopyWith<$Res> {
-  __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
+class __$$SuccessImplCopyWithImpl<$Res>
+    extends _$ImagePickStateCopyWithImpl<$Res, _$SuccessImpl>
+    implements _$$SuccessImplCopyWith<$Res> {
+  __$$SuccessImplCopyWithImpl(
+      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -472,7 +475,7 @@ class __$$_SuccessCopyWithImpl<$Res>
   $Res call({
     Object? imageWithThumbnailAndAspectRatio = null,
   }) {
-    return _then(_$_Success(
+    return _then(_$SuccessImpl(
       imageWithThumbnailAndAspectRatio: null == imageWithThumbnailAndAspectRatio
           ? _value.imageWithThumbnailAndAspectRatio
           : imageWithThumbnailAndAspectRatio // ignore: cast_nullable_to_non_nullable
@@ -483,8 +486,8 @@ class __$$_SuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Success implements _Success {
-  const _$_Success({required this.imageWithThumbnailAndAspectRatio});
+class _$SuccessImpl implements _Success {
+  const _$SuccessImpl({required this.imageWithThumbnailAndAspectRatio});
 
   @override
   final ImageWithThumbnailAndAspectRatio imageWithThumbnailAndAspectRatio;
@@ -495,10 +498,10 @@ class _$_Success implements _Success {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Success &&
+            other is _$SuccessImpl &&
             (identical(other.imageWithThumbnailAndAspectRatio,
                     imageWithThumbnailAndAspectRatio) ||
                 other.imageWithThumbnailAndAspectRatio ==
@@ -512,8 +515,8 @@ class _$_Success implements _Success {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SuccessCopyWith<_$_Success> get copyWith =>
-      __$$_SuccessCopyWithImpl<_$_Success>(this, _$identity);
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -599,10 +602,10 @@ class _$_Success implements _Success {
 abstract class _Success implements ImagePickState {
   const factory _Success(
       {required final ImageWithThumbnailAndAspectRatio
-          imageWithThumbnailAndAspectRatio}) = _$_Success;
+          imageWithThumbnailAndAspectRatio}) = _$SuccessImpl;
 
   ImageWithThumbnailAndAspectRatio get imageWithThumbnailAndAspectRatio;
   @JsonKey(ignore: true)
-  _$$_SuccessCopyWith<_$_Success> get copyWith =>
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

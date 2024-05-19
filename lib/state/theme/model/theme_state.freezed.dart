@@ -12,7 +12,7 @@ part of 'theme_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ThemeState {
@@ -63,22 +63,22 @@ class _$ThemeStateCopyWithImpl<$Res, $Val extends ThemeState>
 }
 
 /// @nodoc
-abstract class _$$_ThemeStateCopyWith<$Res>
+abstract class _$$ThemeStateImplCopyWith<$Res>
     implements $ThemeStateCopyWith<$Res> {
-  factory _$$_ThemeStateCopyWith(
-          _$_ThemeState value, $Res Function(_$_ThemeState) then) =
-      __$$_ThemeStateCopyWithImpl<$Res>;
+  factory _$$ThemeStateImplCopyWith(
+          _$ThemeStateImpl value, $Res Function(_$ThemeStateImpl) then) =
+      __$$ThemeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Brightness brightness, AppSeedColor seedColor});
 }
 
 /// @nodoc
-class __$$_ThemeStateCopyWithImpl<$Res>
-    extends _$ThemeStateCopyWithImpl<$Res, _$_ThemeState>
-    implements _$$_ThemeStateCopyWith<$Res> {
-  __$$_ThemeStateCopyWithImpl(
-      _$_ThemeState _value, $Res Function(_$_ThemeState) _then)
+class __$$ThemeStateImplCopyWithImpl<$Res>
+    extends _$ThemeStateCopyWithImpl<$Res, _$ThemeStateImpl>
+    implements _$$ThemeStateImplCopyWith<$Res> {
+  __$$ThemeStateImplCopyWithImpl(
+      _$ThemeStateImpl _value, $Res Function(_$ThemeStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_ThemeStateCopyWithImpl<$Res>
     Object? brightness = null,
     Object? seedColor = null,
   }) {
-    return _then(_$_ThemeState(
+    return _then(_$ThemeStateImpl(
       brightness: null == brightness
           ? _value.brightness
           : brightness // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_ThemeStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ThemeState implements _ThemeState {
-  const _$_ThemeState({required this.brightness, required this.seedColor});
+class _$ThemeStateImpl implements _ThemeState {
+  const _$ThemeStateImpl({required this.brightness, required this.seedColor});
 
   @override
   final Brightness brightness;
@@ -116,10 +116,10 @@ class _$_ThemeState implements _ThemeState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ThemeState &&
+            other is _$ThemeStateImpl &&
             (identical(other.brightness, brightness) ||
                 other.brightness == brightness) &&
             (identical(other.seedColor, seedColor) ||
@@ -132,14 +132,14 @@ class _$_ThemeState implements _ThemeState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ThemeStateCopyWith<_$_ThemeState> get copyWith =>
-      __$$_ThemeStateCopyWithImpl<_$_ThemeState>(this, _$identity);
+  _$$ThemeStateImplCopyWith<_$ThemeStateImpl> get copyWith =>
+      __$$ThemeStateImplCopyWithImpl<_$ThemeStateImpl>(this, _$identity);
 }
 
 abstract class _ThemeState implements ThemeState {
   const factory _ThemeState(
       {required final Brightness brightness,
-      required final AppSeedColor seedColor}) = _$_ThemeState;
+      required final AppSeedColor seedColor}) = _$ThemeStateImpl;
 
   @override
   Brightness get brightness;
@@ -147,6 +147,6 @@ abstract class _ThemeState implements ThemeState {
   AppSeedColor get seedColor;
   @override
   @JsonKey(ignore: true)
-  _$$_ThemeStateCopyWith<_$_ThemeState> get copyWith =>
+  _$$ThemeStateImplCopyWith<_$ThemeStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

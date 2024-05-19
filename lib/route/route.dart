@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -47,9 +49,9 @@ class RouterNotifier extends ChangeNotifier {
 
   String? _redirectLogic(BuildContext context, GoRouterState state) {
     final authState = ref.read(authStateProvider);
-    final areWeLanding = state.path == RoutePath.landing;
-    final areWeSignIn = state.path == RoutePath.signIn;
-    final areWeSignUp = state.path == RoutePath.signUp;
+    final areWeLanding = state.fullPath == RoutePath.landing;
+    final areWeSignIn = state.fullPath == RoutePath.signIn;
+    final areWeSignUp = state.fullPath == RoutePath.signUp;
 
     return authState.maybeMap(
       unKnown: (_) => areWeLanding ? null : RoutePath.landing,
@@ -58,9 +60,9 @@ class RouterNotifier extends ChangeNotifier {
       signUp: (_) => areWeSignUp ? null : RoutePath.signUp,
       error: (_) => areWeLanding ? null : RoutePath.landing,
       orElse: () {
-        if (state.path == RoutePath.landing ||
-            state.path == RoutePath.signIn ||
-            state.path == RoutePath.signUp) {
+        if (state.fullPath == RoutePath.landing ||
+            state.fullPath == RoutePath.signIn ||
+            state.fullPath == RoutePath.signUp) {
           return RoutePath.main;
         }
         return null;

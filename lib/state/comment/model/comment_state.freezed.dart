@@ -12,7 +12,7 @@ part of 'comment_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CommentState {
@@ -99,24 +99,25 @@ class _$CommentStateCopyWithImpl<$Res, $Val extends CommentState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$CommentStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$CommentStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -124,9 +125,9 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -220,14 +221,14 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements CommentState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_failureCopyWith<$Res> {
-  factory _$$_failureCopyWith(
-          _$_failure value, $Res Function(_$_failure) then) =
-      __$$_failureCopyWithImpl<$Res>;
+abstract class _$$failureImplCopyWith<$Res> {
+  factory _$$failureImplCopyWith(
+          _$failureImpl value, $Res Function(_$failureImpl) then) =
+      __$$failureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({CommentFailure failure});
 
@@ -235,10 +236,11 @@ abstract class _$$_failureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_failureCopyWithImpl<$Res>
-    extends _$CommentStateCopyWithImpl<$Res, _$_failure>
-    implements _$$_failureCopyWith<$Res> {
-  __$$_failureCopyWithImpl(_$_failure _value, $Res Function(_$_failure) _then)
+class __$$failureImplCopyWithImpl<$Res>
+    extends _$CommentStateCopyWithImpl<$Res, _$failureImpl>
+    implements _$$failureImplCopyWith<$Res> {
+  __$$failureImplCopyWithImpl(
+      _$failureImpl _value, $Res Function(_$failureImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -246,7 +248,7 @@ class __$$_failureCopyWithImpl<$Res>
   $Res call({
     Object? failure = null,
   }) {
-    return _then(_$_failure(
+    return _then(_$failureImpl(
       failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -265,8 +267,8 @@ class __$$_failureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_failure implements _failure {
-  const _$_failure({required this.failure});
+class _$failureImpl implements _failure {
+  const _$failureImpl({required this.failure});
 
   @override
   final CommentFailure failure;
@@ -277,10 +279,10 @@ class _$_failure implements _failure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_failure &&
+            other is _$failureImpl &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
@@ -290,8 +292,8 @@ class _$_failure implements _failure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_failureCopyWith<_$_failure> get copyWith =>
-      __$$_failureCopyWithImpl<_$_failure>(this, _$identity);
+  _$$failureImplCopyWith<_$failureImpl> get copyWith =>
+      __$$failureImplCopyWithImpl<_$failureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -381,33 +383,35 @@ class _$_failure implements _failure {
 }
 
 abstract class _failure implements CommentState {
-  const factory _failure({required final CommentFailure failure}) = _$_failure;
+  const factory _failure({required final CommentFailure failure}) =
+      _$failureImpl;
 
   CommentFailure get failure;
   @JsonKey(ignore: true)
-  _$$_failureCopyWith<_$_failure> get copyWith =>
+  _$$failureImplCopyWith<_$failureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading value, $Res Function(_$_Loading) then) =
-      __$$_LoadingCopyWithImpl<$Res>;
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res>
-    extends _$CommentStateCopyWithImpl<$Res, _$_Loading>
-    implements _$$_LoadingCopyWith<$Res> {
-  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$CommentStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$LoadingImpl implements _Loading {
+  const _$LoadingImpl();
 
   @override
   String toString() {
@@ -415,9 +419,9 @@ class _$_Loading implements _Loading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading);
+        (other.runtimeType == runtimeType && other is _$LoadingImpl);
   }
 
   @override
@@ -511,28 +515,29 @@ class _$_Loading implements _Loading {
 }
 
 abstract class _Loading implements CommentState {
-  const factory _Loading() = _$_Loading;
+  const factory _Loading() = _$LoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_SuccessCopyWith<$Res> {
-  factory _$$_SuccessCopyWith(
-          _$_Success value, $Res Function(_$_Success) then) =
-      __$$_SuccessCopyWithImpl<$Res>;
+abstract class _$$SuccessImplCopyWith<$Res> {
+  factory _$$SuccessImplCopyWith(
+          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
+      __$$SuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SuccessCopyWithImpl<$Res>
-    extends _$CommentStateCopyWithImpl<$Res, _$_Success>
-    implements _$$_SuccessCopyWith<$Res> {
-  __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
+class __$$SuccessImplCopyWithImpl<$Res>
+    extends _$CommentStateCopyWithImpl<$Res, _$SuccessImpl>
+    implements _$$SuccessImplCopyWith<$Res> {
+  __$$SuccessImplCopyWithImpl(
+      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Success implements _Success {
-  const _$_Success();
+class _$SuccessImpl implements _Success {
+  const _$SuccessImpl();
 
   @override
   String toString() {
@@ -540,9 +545,9 @@ class _$_Success implements _Success {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Success);
+        (other.runtimeType == runtimeType && other is _$SuccessImpl);
   }
 
   @override
@@ -636,28 +641,29 @@ class _$_Success implements _Success {
 }
 
 abstract class _Success implements CommentState {
-  const factory _Success() = _$_Success;
+  const factory _Success() = _$SuccessImpl;
 }
 
 /// @nodoc
-abstract class _$$_DeletedCopyWith<$Res> {
-  factory _$$_DeletedCopyWith(
-          _$_Deleted value, $Res Function(_$_Deleted) then) =
-      __$$_DeletedCopyWithImpl<$Res>;
+abstract class _$$DeletedImplCopyWith<$Res> {
+  factory _$$DeletedImplCopyWith(
+          _$DeletedImpl value, $Res Function(_$DeletedImpl) then) =
+      __$$DeletedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DeletedCopyWithImpl<$Res>
-    extends _$CommentStateCopyWithImpl<$Res, _$_Deleted>
-    implements _$$_DeletedCopyWith<$Res> {
-  __$$_DeletedCopyWithImpl(_$_Deleted _value, $Res Function(_$_Deleted) _then)
+class __$$DeletedImplCopyWithImpl<$Res>
+    extends _$CommentStateCopyWithImpl<$Res, _$DeletedImpl>
+    implements _$$DeletedImplCopyWith<$Res> {
+  __$$DeletedImplCopyWithImpl(
+      _$DeletedImpl _value, $Res Function(_$DeletedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Deleted implements _Deleted {
-  const _$_Deleted();
+class _$DeletedImpl implements _Deleted {
+  const _$DeletedImpl();
 
   @override
   String toString() {
@@ -665,9 +671,9 @@ class _$_Deleted implements _Deleted {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Deleted);
+        (other.runtimeType == runtimeType && other is _$DeletedImpl);
   }
 
   @override
@@ -761,29 +767,29 @@ class _$_Deleted implements _Deleted {
 }
 
 abstract class _Deleted implements CommentState {
-  const factory _Deleted() = _$_Deleted;
+  const factory _Deleted() = _$DeletedImpl;
 }
 
 /// @nodoc
-abstract class _$$_ReportedCopyWith<$Res> {
-  factory _$$_ReportedCopyWith(
-          _$_Reported value, $Res Function(_$_Reported) then) =
-      __$$_ReportedCopyWithImpl<$Res>;
+abstract class _$$ReportedImplCopyWith<$Res> {
+  factory _$$ReportedImplCopyWith(
+          _$ReportedImpl value, $Res Function(_$ReportedImpl) then) =
+      __$$ReportedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ReportedCopyWithImpl<$Res>
-    extends _$CommentStateCopyWithImpl<$Res, _$_Reported>
-    implements _$$_ReportedCopyWith<$Res> {
-  __$$_ReportedCopyWithImpl(
-      _$_Reported _value, $Res Function(_$_Reported) _then)
+class __$$ReportedImplCopyWithImpl<$Res>
+    extends _$CommentStateCopyWithImpl<$Res, _$ReportedImpl>
+    implements _$$ReportedImplCopyWith<$Res> {
+  __$$ReportedImplCopyWithImpl(
+      _$ReportedImpl _value, $Res Function(_$ReportedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Reported implements _Reported {
-  const _$_Reported();
+class _$ReportedImpl implements _Reported {
+  const _$ReportedImpl();
 
   @override
   String toString() {
@@ -791,9 +797,9 @@ class _$_Reported implements _Reported {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Reported);
+        (other.runtimeType == runtimeType && other is _$ReportedImpl);
   }
 
   @override
@@ -887,5 +893,5 @@ class _$_Reported implements _Reported {
 }
 
 abstract class _Reported implements CommentState {
-  const factory _Reported() = _$_Reported;
+  const factory _Reported() = _$ReportedImpl;
 }

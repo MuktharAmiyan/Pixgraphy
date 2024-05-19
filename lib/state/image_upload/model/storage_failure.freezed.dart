@@ -12,7 +12,7 @@ part of 'storage_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$StorageFailure {}
@@ -36,25 +36,25 @@ class _$StorageFailureCopyWithImpl<$Res, $Val extends StorageFailure>
 }
 
 /// @nodoc
-abstract class _$$_StorageFailureCopyWith<$Res> {
-  factory _$$_StorageFailureCopyWith(
-          _$_StorageFailure value, $Res Function(_$_StorageFailure) then) =
-      __$$_StorageFailureCopyWithImpl<$Res>;
+abstract class _$$StorageFailureImplCopyWith<$Res> {
+  factory _$$StorageFailureImplCopyWith(_$StorageFailureImpl value,
+          $Res Function(_$StorageFailureImpl) then) =
+      __$$StorageFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_StorageFailureCopyWithImpl<$Res>
-    extends _$StorageFailureCopyWithImpl<$Res, _$_StorageFailure>
-    implements _$$_StorageFailureCopyWith<$Res> {
-  __$$_StorageFailureCopyWithImpl(
-      _$_StorageFailure _value, $Res Function(_$_StorageFailure) _then)
+class __$$StorageFailureImplCopyWithImpl<$Res>
+    extends _$StorageFailureCopyWithImpl<$Res, _$StorageFailureImpl>
+    implements _$$StorageFailureImplCopyWith<$Res> {
+  __$$StorageFailureImplCopyWithImpl(
+      _$StorageFailureImpl _value, $Res Function(_$StorageFailureImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_StorageFailure implements _StorageFailure {
-  const _$_StorageFailure();
+class _$StorageFailureImpl implements _StorageFailure {
+  const _$StorageFailureImpl();
 
   @override
   String toString() {
@@ -62,9 +62,9 @@ class _$_StorageFailure implements _StorageFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_StorageFailure);
+        (other.runtimeType == runtimeType && other is _$StorageFailureImpl);
   }
 
   @override
@@ -72,5 +72,5 @@ class _$_StorageFailure implements _StorageFailure {
 }
 
 abstract class _StorageFailure implements StorageFailure {
-  const factory _StorageFailure() = _$_StorageFailure;
+  const factory _StorageFailure() = _$StorageFailureImpl;
 }

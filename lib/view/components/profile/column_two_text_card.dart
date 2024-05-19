@@ -23,7 +23,7 @@ class ColumnTwoTextCard extends StatelessWidget {
             title!,
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.background,
+                  color: Theme.of(context).colorScheme.surface,
                 ),
           ),
         ] else if (icon != null) ...[
@@ -32,7 +32,7 @@ class ColumnTwoTextCard extends StatelessWidget {
         Text(
           subTitle,
           style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                color: Theme.of(context).colorScheme.background,
+                color: Theme.of(context).colorScheme.surface,
               ),
         ),
       ],

@@ -22,7 +22,7 @@ class UserCard extends ConsumerWidget {
     final isCurrentUser = currentUser == uid;
     return Card(
       margin: const EdgeInsets.all(8),
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

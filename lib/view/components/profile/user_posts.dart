@@ -24,7 +24,7 @@ class UserPosts extends ConsumerWidget {
                   child: Text(
                     Strings.noPostYet,
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          color: Theme.of(context).colorScheme.onBackground,
+                          color: Theme.of(context).colorScheme.onSurface,
                         ),
                   ),
                 ),

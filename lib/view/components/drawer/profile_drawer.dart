@@ -39,7 +39,7 @@ class ProfileDrawer extends ConsumerWidget {
           ),
           ListTile(
             onTap: () => {
-              context.pushNamed(Strings.profile,
+              context.pushNamed(RouteName.profile,
                   pathParameters: {FirebaseFieldName.uid: uid!}),
               Scaffold.of(context).closeDrawer(),
             },

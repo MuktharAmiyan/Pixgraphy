@@ -55,10 +55,8 @@ class _AddPostState extends ConsumerState<AddPost> {
         .watch(postUploadProvider)
         .maybeWhen(loading: () => true, orElse: () => false);
 
-    return WillPopScope(
-      onWillPop: () async {
-        return isLoading ? false : true;
-      },
+    return PopScope(
+      canPop: isLoading ? false : true,
       child: Scaffold(
         appBar: AppBar(
           title: const Text(Strings.addPost),

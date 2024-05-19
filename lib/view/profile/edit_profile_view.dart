@@ -87,12 +87,8 @@ class _EditProfileviewState extends ConsumerState<EditProfileview> {
           loading: () => true,
         );
 
-    return WillPopScope(
-      onWillPop: () async {
-        // ignore: unused_result
-        ref.refresh(imagePickerProvider);
-        return true;
-      },
+    return PopScope(
+      onPopInvoked: (didPop) => ref.refresh(imagePickerProvider),
       child: Scaffold(
         appBar: AppBar(
           title: const Text(Strings.editprofile),

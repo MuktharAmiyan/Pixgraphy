@@ -61,7 +61,7 @@ class UnsplashPostDetailView extends ConsumerWidget {
                                       .copyWith(
                                         color: Theme.of(context)
                                             .colorScheme
-                                            .onBackground,
+                                            .onSurface,
                                       ),
                                 ),
                                 SubTitleWidget(

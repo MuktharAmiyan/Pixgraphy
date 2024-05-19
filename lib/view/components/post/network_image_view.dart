@@ -21,7 +21,7 @@ class NetworkImageView extends StatelessWidget {
           Strings.imageErrorMsg,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                color: Theme.of(context).colorScheme.onBackground,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
         ),
       ),

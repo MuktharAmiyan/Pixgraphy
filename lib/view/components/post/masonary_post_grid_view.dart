@@ -20,7 +20,7 @@ class MasonaryPostGridView extends StatelessWidget {
         child: Text(
           Strings.followuserstoseetheirposts,
           style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                color: Theme.of(context).colorScheme.onBackground,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
         ),
       );

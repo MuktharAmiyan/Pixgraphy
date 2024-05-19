@@ -12,7 +12,7 @@ class UserMiniCard extends StatelessWidget {
         onTap: onTap,
         child: Card(
           margin: const EdgeInsets.all(5),
-          color: Theme.of(context).colorScheme.onBackground,
+          color: Theme.of(context).colorScheme.onSurface,
           child: Center(
             child: Padding(
               padding: const EdgeInsets.all(16),

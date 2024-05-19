@@ -12,7 +12,7 @@ part of 'post_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PostFailure {}
@@ -36,25 +36,25 @@ class _$PostFailureCopyWithImpl<$Res, $Val extends PostFailure>
 }
 
 /// @nodoc
-abstract class _$$_PostFailureCopyWith<$Res> {
-  factory _$$_PostFailureCopyWith(
-          _$_PostFailure value, $Res Function(_$_PostFailure) then) =
-      __$$_PostFailureCopyWithImpl<$Res>;
+abstract class _$$PostFailureImplCopyWith<$Res> {
+  factory _$$PostFailureImplCopyWith(
+          _$PostFailureImpl value, $Res Function(_$PostFailureImpl) then) =
+      __$$PostFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_PostFailureCopyWithImpl<$Res>
-    extends _$PostFailureCopyWithImpl<$Res, _$_PostFailure>
-    implements _$$_PostFailureCopyWith<$Res> {
-  __$$_PostFailureCopyWithImpl(
-      _$_PostFailure _value, $Res Function(_$_PostFailure) _then)
+class __$$PostFailureImplCopyWithImpl<$Res>
+    extends _$PostFailureCopyWithImpl<$Res, _$PostFailureImpl>
+    implements _$$PostFailureImplCopyWith<$Res> {
+  __$$PostFailureImplCopyWithImpl(
+      _$PostFailureImpl _value, $Res Function(_$PostFailureImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_PostFailure implements _PostFailure {
-  const _$_PostFailure();
+class _$PostFailureImpl implements _PostFailure {
+  const _$PostFailureImpl();
 
   @override
   String toString() {
@@ -62,9 +62,9 @@ class _$_PostFailure implements _PostFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_PostFailure);
+        (other.runtimeType == runtimeType && other is _$PostFailureImpl);
   }
 
   @override
@@ -72,5 +72,5 @@ class _$_PostFailure implements _PostFailure {
 }
 
 abstract class _PostFailure implements PostFailure {
-  const factory _PostFailure() = _$_PostFailure;
+  const factory _PostFailure() = _$PostFailureImpl;
 }

@@ -11,7 +11,7 @@ class ContinueWithGoogleButton extends ConsumerWidget {
     return FilledButton.icon(
       style: FilledButton.styleFrom(
         backgroundColor: Theme.of(context).colorScheme.inverseSurface,
-        foregroundColor: Theme.of(context).colorScheme.background,
+        foregroundColor: Theme.of(context).colorScheme.surface,
       ),
       onPressed: ref.read(authStateProvider.notifier).signInWithGoogle,
       icon: const Icon(Icons.flutter_dash),

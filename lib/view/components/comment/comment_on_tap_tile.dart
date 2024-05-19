@@ -6,7 +6,7 @@ import '../profile/profile_circle_avathar.dart';
 import '../text/subtitle.dart';
 
 class CommentOnTapTile extends ConsumerWidget {
-  const CommentOnTapTile({Key? key, this.onTap}) : super(key: key);
+  const CommentOnTapTile({super.key, this.onTap});
 
   final VoidCallback? onTap;
 
@@ -30,7 +30,7 @@ class CommentOnTapTile extends ConsumerWidget {
             padding: const EdgeInsets.all(8).copyWith(right: 200),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
-              color: Theme.of(context).colorScheme.background,
+              color: Theme.of(context).colorScheme.surface,
             ),
             child: const SubTitleWidget(
               text: Strings.addAComment,

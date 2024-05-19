@@ -17,7 +17,7 @@ class UserEmail extends ConsumerWidget {
       style: Theme.of(context)
           .textTheme
           .titleSmall!
-          .copyWith(color: Theme.of(context).colorScheme.onBackground),
+          .copyWith(color: Theme.of(context).colorScheme.onSurface),
     );
   }
 }

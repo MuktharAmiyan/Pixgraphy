@@ -21,7 +21,7 @@ class CommentUsernameAndComment extends ConsumerWidget {
           error: (_, __) => '',
           loading: () => ''),
       text1Style: Theme.of(context).textTheme.titleSmall!.copyWith(
-            color: Theme.of(context).colorScheme.onBackground,
+            color: Theme.of(context).colorScheme.onSurface,
           ),
       text2: comment,
       text2Style: Theme.of(context).textTheme.labelSmall!.copyWith(
